@@ -52,6 +52,13 @@ namespace DataLayer
             mB.Entity<Customers>()
                 .Property(p => p.OrderAmount)
                 .HasDefaultValueSql("0");
+
+            mB.Entity<Orders>()
+                .Property(p => p.PurchaseDate)
+                .HasDefaultValueSql("getdate()");
+            mB.Entity<Orders>()
+                .Property(p => p.OrderGuid)
+                .HasDefaultValueSql("newid()");
         #endregion
 
             #region Data Seeding

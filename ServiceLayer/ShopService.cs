@@ -49,8 +49,7 @@ namespace ServiceLayer
         {
             Orders order = new Orders
             {
-                CustomerID = customer.CustomerID,
-                OrderGuid = new Guid()
+                CustomerID = customer.CustomerID
             };
 
             _context.Orders.Add(order);
