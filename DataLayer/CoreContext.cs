@@ -43,6 +43,11 @@ namespace DataLayer
             mB.Entity<Products>()
                 .HasMany(products => products.OrderItems)
                 .WithOne(orderItems => orderItems.Products);
+
+            mB.Entity<Customers>()
+                .HasOne(customer => customer.City)
+                .WithMany(cities => cities.Customer)
+                .HasForeignKey(customer => customer.PostNumber);
         }
     }
 }

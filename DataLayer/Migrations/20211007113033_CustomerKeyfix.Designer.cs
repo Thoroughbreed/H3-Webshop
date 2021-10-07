@@ -4,14 +4,16 @@ using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(CoreContext))]
-    partial class CoreContextModelSnapshot : ModelSnapshot
+    [Migration("20211007113033_CustomerKeyfix")]
+    partial class CustomerKeyfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,12 +96,6 @@ namespace DataLayer.Migrations
 
                     b.Property<int>("ProductID")
                         .HasColumnType("int");
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("LinePrice")
-                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderID", "ProductID");
 
