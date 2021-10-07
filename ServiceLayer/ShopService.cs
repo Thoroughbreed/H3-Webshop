@@ -45,10 +45,15 @@ namespace ServiceLayer
             _context.SaveChanges();
         }
 
-        public void AddOrderLine(Products product)
+        public void AddOrder(Customers customer)
         {
-            OrderItems oi = new OrderItems { ProductID = product.ProductID, Amount = 1, LinePrice = product.Price };
-            _context.OrderItems.Add(oi);
+            Orders order = new Orders
+            {
+                CustomerID = customer.CustomerID,
+                OrderGuid = new Guid()
+            };
+
+            _context.Orders.Add(order);
             _context.SaveChanges();
         }
     }
