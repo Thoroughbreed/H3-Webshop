@@ -44,5 +44,12 @@ namespace ServiceLayer
 
             _context.SaveChanges();
         }
+
+        public void AddOrderLine(Products product)
+        {
+            OrderItems oi = new OrderItems { ProductID = product.ProductID, Amount = 1, LinePrice = product.Price };
+            _context.OrderItems.Add(oi);
+            _context.SaveChanges();
+        }
     }
 }
