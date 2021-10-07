@@ -30,9 +30,7 @@ namespace DataLayer
         }
         protected override void OnModelCreating(ModelBuilder mB)
         {
-            //            public Orders Orders { get; set; }
-            //public Products Products { get; set; }
-
+        #region Key constraints
             mB.Entity<OrderItems>()
                 .HasKey(k => new { k.OrderID, k.ProductID });
 
@@ -48,6 +46,31 @@ namespace DataLayer
                 .HasOne(customer => customer.City)
                 .WithMany(cities => cities.Customer)
                 .HasForeignKey(customer => customer.PostNumber);
+            #endregion
+
+            #region Data Seeding
+            mB.Entity<Categories>().HasData(
+                new Categories { CategoryID = 1, Category = "Bælgfrugter" },
+                new Categories { CategoryID = 2, Category = "Kød erstatninger"},
+                new Categories { CategoryID = 3, Category = "Brød"},
+                new Categories { CategoryID = 4, Category = "Raw food"}
+                );
+            mB.Entity<Cities>().HasData(
+                new Cities { PostNumber = 6270, Name = "Tønder" },
+                new Cities { PostNumber = 6000, Name = "Kolding" },
+                new Cities { PostNumber = 6300, Name = "Sønderborg" },
+                new Cities { PostNumber = 2400, Name = "København NV" },
+                new Cities { PostNumber = 6200, Name = "Aabenraa" }
+                );
+            mB.Entity<PriceDiscounts>().HasData(
+                new PriceDiscounts { PriceDiscountID = 1, DiscountValue = 10, DiscountCode = "Vegan10" },
+                new PriceDiscounts { PriceDiscountID = 2, DiscountValue = 50 },
+                new PriceDiscounts { PriceDiscountID = 3, DiscountValue = 3, DiscountCode = "GrandOpening" }
+                );
+            mB.Entity<Vendors>().HasData(
+
+                );
+        #endregion
         }
     }
 }
