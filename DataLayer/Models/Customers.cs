@@ -9,14 +9,17 @@ namespace DataLayer.Models
     {
         [Key]
         public int CustomerID { get; set; }
+        [Required]
         public string FName { get; set; }
+        [Required]
         public string LName { get; set; }
+        [Required]
         public string RoadName { get; set; }
         public int RoadNumber { get; set; }
         public int PostNumber { get; set; }
         public string PhoneMain { get; set; }
-        public string ProneMobile { get; set; }
-        public int OrderAmount { get; set; }
+        public string PhoneMobile { get; set; }
+        public int? OrderAmount { get; set; }
 
         // Navigation properties
         public Cities City { get; set; }

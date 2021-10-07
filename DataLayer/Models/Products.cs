@@ -11,13 +11,15 @@ namespace DataLayer.Models
         [Key]
         public int ProductID { get; set; }
 
-        [Column(TypeName = "decimal(8,2)")]
+        [Column(TypeName = "decimal(8,2)"), Required]
         public decimal Price { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string SKU { get; set; }
-        public int PriceDiscountID { get; set; }
+        public int? PriceDiscountID { get; set; }
         public int CategoryID { get; set; }
-        public int VendorID { get; set; }
+        public int? VendorID { get; set; }
 
         // Navigation properties
         public Vendors Vendor { get; set; }
