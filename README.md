@@ -26,3 +26,5 @@ Kunder bliver oprettet i databasen ved hvert køb, og man kan så tilvælge at o
 ---
 ### Database
 Databasen er en MSSQL Express
+#### ER Diagram
+![ER diagram over databasen](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/ER%20Diagram%20WebShop.png?raw=true)
