@@ -23,9 +23,7 @@ namespace DataLayer
         public DbSet<Vendors> Vendors { get; set; }
 
         //public CoreContext(DbContextOptions options) : base(options)
-        //{
-
-        //}
+        //{ }
 
         protected override void OnConfiguring(DbContextOptionsBuilder oB)
         {
@@ -58,7 +56,7 @@ namespace DataLayer
                 .HasOne(customer => customer.City)
                 .WithMany(cities => cities.Customer)
                 .HasForeignKey(customer => customer.PostNumber);
-            #endregion
+        #endregion
 
          #region Misc settings
             mB.Entity<Customers>()
