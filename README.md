@@ -14,7 +14,7 @@ Hvis kunden er logget ind (kommer når frontend bliver bygget på) kan kunden sa
 Kunder bliver oprettet i databasen ved hvert køb, og man kan så tilvælge at oprette en bruger (frontend) så man lettere kan købe flere gange. 
 
 #### Class diagram
-![ER diagram over klasser](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/Class_Diagram.png?raw=true)
+![ER diagram over klasser](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/Webshop_Class_Diagram.png?raw=true)
 
 ### Service Layer
 Servicelayer er bygget op af flere services, alt efter hvad der skal gøres. 
