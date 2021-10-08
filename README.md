@@ -13,6 +13,8 @@ Hvis kunden er logget ind (kommer når frontend bliver bygget på) kan kunden sa
 
 Kunder bliver oprettet i databasen ved hvert køb, og man kan så tilvælge at oprette en bruger (frontend) så man lettere kan købe flere gange. 
 
+I første omgang er "SKU" tom under Products, SKU er "Stock keeping unit" og er en intern "kode" per produkt der bliver brugt på lageret. Den er ikke med i den initielle data seeding, da dette kun er en test og lageroversigt først kommer i de senere dele af projektet.
+
 #### Class diagram
 ![ER diagram over klasser](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/Webshop_Class_Diagram.png?raw=true)
 
