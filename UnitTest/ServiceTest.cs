@@ -24,7 +24,18 @@ namespace UnitTest
                 Assert.Equal("Tester", ct.Customers.OrderByDescending(c => c.CustomerID).First().LName);
                 Assert.Null(ct.Customers.OrderByDescending(c => c.CustomerID).First().PhoneMobile);
                 Assert.NotNull(ct.Customers.OrderByDescending(c => c.CustomerID).First().PhoneMain);
-                Assert.Equal(2, ct.Customers.Count());
+                Assert.Equal(4, ct.Customers.Count());
+            }
+        }
+
+        [Fact]
+        public void Test_Deleting_User_In_DB()
+        {
+            using (var ct = new CoreContext())
+            {
+                var service = new ShopService(ct);
+                var user = ct.Customers.OrderBy(c => c.CustomerID).LastOrDefault();
+                service.DeleteUser(user);
             }
         }
 

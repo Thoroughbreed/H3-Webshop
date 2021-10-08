@@ -31,6 +31,13 @@ namespace ServiceLayer
             _context.SaveChanges();
         }
 
+        public void DeleteUser(Customers customer)
+        {
+            var user = _context.Customers.Where(u => u == customer).FirstOrDefault();
+            _context.Customers.Remove(user);
+            _context.SaveChanges();
+        }
+
         public void EditUser(int userID, string FName, string LName, string RoadName, int RoadNum, int PostNum, string? PhoneMain, string? PhoneCell)
         {
             Customers cust = _context.Customers.Where(u => u.CustomerID == userID).FirstOrDefault();

@@ -22,6 +22,11 @@ namespace DataLayer
         public DbSet<Products> Products { get; set; }
         public DbSet<Vendors> Vendors { get; set; }
 
+        //public CoreContext(DbContextOptions options) : base(options)
+        //{
+
+        //}
+
         protected override void OnConfiguring(DbContextOptionsBuilder oB)
         {
             if (!oB.IsConfigured)
