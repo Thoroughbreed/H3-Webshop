@@ -14,11 +14,13 @@ Hvis kunden er logget ind (kommer når frontend bliver bygget på) kan kunden sa
 Kunder bliver oprettet i databasen ved hvert køb, og man kan så tilvælge at oprette en bruger (frontend) så man lettere kan købe flere gange. 
 
 ### Service Layer
-I servicelayer er der pt. 4 metoder:
+Servicelayer er bygget op af flere services, alt efter hvad der skal gøres. 
+Pt er der dog kun ShopService der har følgende 4 metoder:
 - AddUser()
 - EditUser()
 - DeleteUser()
 - AddOrder()
+Derefter vil der blive lavet en service til produkter (opdatere, tilføje, slette m.m.) som skal bygges op til frontend.
 
 I AddUser() er navn og adresse selvfølgeligt et krav, men telefonnumer er optional
 
