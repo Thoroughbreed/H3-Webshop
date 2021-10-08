@@ -37,6 +37,12 @@ namespace UnitTest
                 var user = ct.Customers.OrderBy(c => c.CustomerID).LastOrDefault();
                 service.DeleteUser(user);
             }
+
+            // ASSERT
+            using (var ct = new CoreContext())
+            {
+                Assert.Equal(3, ct.Customers.Count());
+            }
         }
 
         [Fact]
