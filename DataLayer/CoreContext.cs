@@ -1,6 +1,7 @@
 ﻿using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 
 namespace DataLayer
@@ -25,7 +26,13 @@ namespace DataLayer
         {
             if (!oB.IsConfigured)
             {
-                oB.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = Webshop; Trusted_Connection = True;");
+                oB.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = Webshop; Trusted_Connection = True;")
+                    .EnableSensitiveDataLogging(true)
+                    .UseLoggerFactory(new ServiceCollection()
+                    .AddLogging(b => b.AddConsole()
+                    .AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.Information))
+                    .BuildServiceProvider()
+                    .GetService<ILoggerFactory>());
             }
         }
         protected override void OnModelCreating(ModelBuilder mB)
