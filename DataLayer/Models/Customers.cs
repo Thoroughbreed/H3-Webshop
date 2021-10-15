@@ -15,6 +15,8 @@ namespace DataLayer.Models
         public string LName { get; set; }
         [Required]
         public string EMail { get; set; }
+        [Required]
+        public string Password { get; set; }
         public string RoadName { get; set; }
         public string RoadNumber { get; set; }
         public int PostNumber { get; set; }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DataLayer.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ServiceLayer
 {
@@ -97,6 +98,32 @@ namespace ServiceLayer
             };
 
             _context.Orders.Add(order);
+        }
+
+        public IQueryable<Products> GetProductsQ(string? searchTerm)
+        {
+            var q = _context.Products.Include(p => p.Category)
+                .Include(p => p.PriceDiscount)
+                .Include(p => p.Vendor)
+                .AsNoTracking();
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return q;
+            }
+            return q.Where(p => p.Name.Contains(searchTerm) ||
+                                p.Category.Category.Contains(searchTerm) || 
+                                p.Vendor.Name.Contains(searchTerm));
+        }
+
+        public IQueryable<Customers> GetCustomersQ()
+        {
+            var q = _context.Customers
+                .Include(c => c.City)
+                .AsNoTracking();
+
+            var debug = q.ToList();
+
+            return q;
         }
     }
 

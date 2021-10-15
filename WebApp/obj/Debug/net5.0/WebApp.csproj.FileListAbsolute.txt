@@ -393,3 +393,6 @@ C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\P
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\_ViewImports.cshtml.g.cs
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\_ViewStart.cshtml.g.cs
+C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\_CustomerListing.cshtml.g.cs
+C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\net5.0\Humanizer.dll
+C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

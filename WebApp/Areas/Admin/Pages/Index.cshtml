@@ -1,5 +1,15 @@
 ﻿@page
 @model WebApp.Areas.Admin.IndexModel
+@using ServiceLayer 
 @{
 }
 <h4>Welcome to the admin area!</h4>
+@foreach (var cust in Model.Customers)
+{
+    <partial name="_CustomerListing" model="cust" />
+}
+<hr />
+@foreach (var prod in Model.Products)
+{
+    <partial name="_ProductListing" model="prod" />
+}
