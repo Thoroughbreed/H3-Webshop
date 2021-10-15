@@ -1,6 +1,10 @@
 ﻿@model DataLayer.Models.Products
-<h4>Model.Name</h4>
-<p>@Model.LName</p>
-<p>@Model.RoadName @Model.RoadNumber</p>
-<p>@Model.PostNumber @Model.City.Name</p>
+<h4>@Model.Name</h4>
+<p>@Model.ProductID - @Model.SKU</p>
+<p>@Model.Category.Category</p>
+<p>@Model.Price (@Model.PriceDiscount.DiscountCode @Model.PriceDiscount.DiscountValue)</p>
+@if (Model.VendorID.HasValue)
+{
+    <p>@Model.Vendor.Name</p>;
+}
 <hr />

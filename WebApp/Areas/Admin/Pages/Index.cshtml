@@ -3,13 +3,34 @@
 @using ServiceLayer 
 @{
 }
-<h4>Welcome to the admin area!</h4>
+<h4>Welcome to the admin area!</h4><hr />
+<form method="get" id="searchForm">
+    <div class="input-group mb-3">
+        <input type="search" asp-for="@Model.Search" class="form-control">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <label asp-for="prodOrderOption">Order product by: </label>
+    <select asp-for="prodOrderOption" asp-items="Html.GetEnumSelectList<ProductOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
+    <label asp-for="custOrderOption">Order customer by: </label>
+    <select asp-for="custOrderOption" asp-items="Html.GetEnumSelectList<CustomerOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
+</form>
 @foreach (var cust in Model.Customers)
 {
     <partial name="_CustomerListing" model="cust" />
 }
-<hr />
 @foreach (var prod in Model.Products)
 {
     <partial name="_ProductListing" model="prod" />
 }
+<ul class="pagination">
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <li class="page-item @(i == Model.CurrPage ? "active" : "")">
+            <a asp-page="./Index" asp-route-currpage="@i" class="page-link">@i</a>
+        </li>
+    }
+</ul>

@@ -11,7 +11,7 @@ namespace ServiceLayer
         private readonly CoreContext _context = new CoreContext();
 
         public ShopService(CoreContext ct)
-        {  }
+        { }
         public ShopService()
         { }
         public void Commit()
@@ -111,25 +111,43 @@ namespace ServiceLayer
                 return q;
             }
             return q.Where(p => p.Name.Contains(searchTerm) ||
-                                p.Category.Category.Contains(searchTerm) || 
+                                p.Category.Category.Contains(searchTerm) ||
                                 p.Vendor.Name.Contains(searchTerm));
         }
-
-        public IQueryable<Customers> GetCustomersQ()
+        public List<Products> GetProducts(int currPage, int pageSize, ProductOrderOptions options, string search = null)
         {
-            var q = _context.Customers
-                .Include(c => c.City)
-                .AsNoTracking();
-
-            var debug = q.ToList();
-
-            return q;
+            return GetProductsQ(search)
+                .Skip((currPage - 1) * pageSize)
+                .Take(pageSize)
+                .OrderByOptions(options)
+                .ToList();
         }
     }
 
     public class AdminService
     {
         private readonly CoreContext _context = new CoreContext();
+        public IQueryable<Customers> GetCustomersQ(string ? searchTerm)
+        {
+            var q = _context.Customers
+                .Include(c => c.City)
+                .AsNoTracking(); ;
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return q;
+            }
+            return q.Where(c => c.FName.Contains(searchTerm) ||
+                                c.LName.Contains(searchTerm) ||
+                                c.City.Name.Contains(searchTerm));
+        }
 
+        public List<Customers> GetCustomers(int currPage, int pageSize, CustomerOrderOptions options, string search = null)
+        {
+            return GetCustomersQ(search)
+                .Skip((currPage - 1) * pageSize)
+                .Take(pageSize)
+                .OrderByOptions(options)
+                .ToList();
+        }
     }
 }
