@@ -62,7 +62,6 @@ C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\DataLayer.d
 C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\ServiceLayer.dll
 C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\DataLayer.pdb
 C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\ServiceLayer.pdb
-C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.csprojAssemblyReference.cache
 C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.AssemblyInfoInputs.cache
 C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.AssemblyInfo.cs
 C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.csproj.CopyComplete
@@ -72,3 +71,5 @@ C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.
 C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\jan\source\repos\WebshopCLI\Webshop\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.csproj.CoreCompileInputs.cache
+C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.csproj.AssemblyReference.cache
+C:\Users\jan\source\repos\WebshopCLI\Webshop\obj\Debug\netcoreapp3.1\WebshopCLI.GeneratedMSBuildEditorConfig.editorconfig

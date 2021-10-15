@@ -1,5 +1,4 @@
-﻿using System;
-using DataLayer;
+﻿using DataLayer;
 using System.Collections.Generic;
 using System.Linq;
 using DataLayer.Models;
@@ -8,13 +7,16 @@ namespace ServiceLayer
 {
     public class ShopService
     {
-        private CoreContext _context;
+        private readonly CoreContext _context = new CoreContext();
 
         public ShopService(CoreContext ct)
+        {  }
+        public ShopService()
+        { }
+        public void Commit()
         {
-            _context = ct;
+            _context.SaveChanges();
         }
-
         /// <summary>
         /// Adding a new user to context
         /// </summary>
@@ -25,7 +27,7 @@ namespace ServiceLayer
         /// <param name="PostNum">Post number</param>
         /// <param name="PhoneMain">Phone number (main)</param>
         /// <param name="PhoneCell">Phone number (secondary)</param>
-        public void AddUser(string FName, string LName, string RoadName, int RoadNum, int PostNum, string? PhoneMain, string? PhoneCell)
+        public void AddUser(string FName, string LName, string RoadName, string RoadNum, int PostNum, string? PhoneMain, string? PhoneCell)
         {
             Customers cust = new Customers
             {
@@ -38,7 +40,11 @@ namespace ServiceLayer
                 PhoneMobile = PhoneCell
             };
             _context.Customers.Add(cust);
-            _context.SaveChanges();
+        }
+
+        public void AddUser(Customers customer)
+        {
+            _context.Customers.Add(customer);
         }
 
         /// <summary>
@@ -49,7 +55,6 @@ namespace ServiceLayer
         {
             var user = _context.Customers.Where(u => u == customer).FirstOrDefault();
             _context.Customers.Remove(user);
-            _context.SaveChanges();
         }
 
         /// <summary>
@@ -63,7 +68,7 @@ namespace ServiceLayer
         /// <param name="PostNum">Post number</param>
         /// <param name="PhoneMain">Phone number (main)</param>
         /// <param name="PhoneCell">Phone number (secondary)</param>
-        public void EditUser(int userID, string FName, string LName, string RoadName, int RoadNum, int PostNum, string? PhoneMain, string? PhoneCell)
+        public void EditUser(int userID, string FName, string LName, string RoadName, string RoadNum, int PostNum, string? PhoneMain, string? PhoneCell)
         {
             Customers cust = _context.Customers.Where(u => u.CustomerID == userID).FirstOrDefault();
             cust.FName = FName;
@@ -73,8 +78,11 @@ namespace ServiceLayer
             cust.PostNumber = PostNum;
             cust.PhoneMain = PhoneMain;
             cust.PhoneMobile = PhoneCell;
+        }
 
-            _context.SaveChanges();
+        public void EditUser(Customers customer)
+        {
+            _context.Customers.Add(customer);
         }
 
         /// <summary>
@@ -89,7 +97,12 @@ namespace ServiceLayer
             };
 
             _context.Orders.Add(order);
-            _context.SaveChanges();
         }
+    }
+
+    public class AdminService
+    {
+        private readonly CoreContext _context = new CoreContext();
+
     }
 }

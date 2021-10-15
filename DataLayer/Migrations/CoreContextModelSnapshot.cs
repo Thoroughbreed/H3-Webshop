@@ -125,6 +125,10 @@ namespace DataLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("EMail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -148,11 +152,10 @@ namespace DataLayer.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("RoadName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoadNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("RoadNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CustomerID");
 

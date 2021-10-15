@@ -143,7 +143,6 @@ C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\DataLayer.
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\ServiceLayer.dll
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\DataLayer.pdb
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\ServiceLayer.pdb
-C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csprojAssemblyReference.cache
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.AssemblyInfoInputs.cache
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.AssemblyInfo.cs
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csproj.CoreCompileInputs.cache
@@ -151,3 +150,5 @@ C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.c
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.dll
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.pdb
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.genruntimeconfig.cache
+C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csproj.AssemblyReference.cache
+C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.GeneratedMSBuildEditorConfig.editorconfig

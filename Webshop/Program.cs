@@ -14,7 +14,7 @@ namespace Webshop
             using (var ct = new CoreContext())
             {
                 var service = new ShopService(ct);
-                service.AddUser("Test", "User", "TestRoad", 123, 6270, "42343424", null);
+                service.AddUser("Test", "User", "TestRoad", "123", 6270, "42343424", null);
             }
         }
     }

@@ -2,17 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
 
 namespace DataLayer
 {
     public class CoreContext : DbContext
     {
-        //public CoreContext(DbContextOptions<CoreContext> options) : base(options)
-        //{
-
-        //}
-
         public DbSet<Categories> Categories { get; set; }
         public DbSet<Cities> Cities { get; set; }
         public DbSet<Customers> Customers { get; set; }
@@ -21,9 +15,6 @@ namespace DataLayer
         public DbSet<PriceDiscounts> PriceDiscounts { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<Vendors> Vendors { get; set; }
-
-        //public CoreContext(DbContextOptions options) : base(options)
-        //{ }
 
         protected override void OnConfiguring(DbContextOptionsBuilder oB)
         {

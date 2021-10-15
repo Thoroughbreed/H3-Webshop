@@ -14,8 +14,9 @@ namespace DataLayer.Models
         [Required]
         public string LName { get; set; }
         [Required]
+        public string EMail { get; set; }
         public string RoadName { get; set; }
-        public int RoadNumber { get; set; }
+        public string RoadNumber { get; set; }
         public int PostNumber { get; set; }
         public string PhoneMain { get; set; }
         public string PhoneMobile { get; set; }
