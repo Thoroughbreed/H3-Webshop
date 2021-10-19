@@ -122,6 +122,16 @@ namespace ServiceLayer
                 .Take(pageSize)
                 .ToList();
         }
+
+        public IQueryable<Products> GetProductByIDQ(int prodID)
+        {
+            return GetProductsQ("").Where(p => p.ProductID == prodID);
+        }
+
+        public Products GetProduct(Products product)
+        {
+            return GetProductByIDQ(product.ProductID).FirstOrDefault();
+        }
     }
 
     public class AdminService

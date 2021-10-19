@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jan\\source\\repos\\WebshopCLI\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\jan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,17 +78,21 @@
         }
       }
     },
-    "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj": {
+    "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj",
+        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj",
         "projectName": "ServiceLayer",
-        "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj",
-        "packagesPath": "C:\\Users\\jan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\obj\\",
+        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj",
+        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,8 +106,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -132,17 +140,21 @@
         }
       }
     },
-    "C:\\Users\\jan\\source\\repos\\WebshopCLI\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\WebApp\\WebApp.csproj",
-        "packagesPath": "C:\\Users\\jan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\WebApp\\obj\\",
+        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj",
+        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -156,8 +168,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj": {
-                "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj"
+              "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj": {
+                "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj"
               }
             }
           }

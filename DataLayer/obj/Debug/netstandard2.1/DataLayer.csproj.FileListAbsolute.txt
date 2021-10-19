@@ -8,3 +8,13 @@ C:\Users\jan\source\repos\WebshopCLI\DataLayer\obj\Debug\netstandard2.1\DataLaye
 C:\Users\jan\source\repos\WebshopCLI\DataLayer\obj\Debug\netstandard2.1\DataLayer.pdb
 C:\Users\jan\source\repos\WebshopCLI\DataLayer\obj\Debug\netstandard2.1\DataLayer.csproj.AssemblyReference.cache
 C:\Users\jan\source\repos\WebshopCLI\DataLayer\obj\Debug\netstandard2.1\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaa\source\repos\Webshop\DataLayer\bin\Debug\netstandard2.1\DataLayer.deps.json
+C:\Users\jaa\source\repos\Webshop\DataLayer\bin\Debug\netstandard2.1\DataLayer.dll
+C:\Users\jaa\source\repos\Webshop\DataLayer\bin\Debug\netstandard2.1\DataLayer.pdb
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.csproj.AssemblyReference.cache
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.AssemblyInfoInputs.cache
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.AssemblyInfo.cs
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.dll
+C:\Users\jaa\source\repos\Webshop\DataLayer\obj\Debug\netstandard2.1\DataLayer.pdb

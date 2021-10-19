@@ -1,6 +1,25 @@
 ﻿@model DataLayer.Models.Customers
-<h4>@Model.FName</h4>
-<p>@Model.LName</p>
-<p>@Model.RoadName @Model.RoadNumber</p>
-<p>@Model.PostNumber @Model.City.Name</p>
-<hr />
+
+    <tr>
+        <td>
+            @Model.CustomerID
+        </td>
+        <td>
+            @Model.FName
+        </td>
+        <td>
+            @Model.LName
+        </td>
+        <td>
+            @Model.EMail
+        </td>
+        <td>
+            @Model.OrderAmount
+        </td>
+        <td>
+            @Model.RoadName @Model.RoadNumber
+        </td>
+        <td>
+            @Model.PostNumber @Model.City.Name
+        </td>
+    </tr>

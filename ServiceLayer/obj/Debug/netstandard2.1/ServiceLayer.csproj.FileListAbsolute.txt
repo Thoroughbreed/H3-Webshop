@@ -10,3 +10,15 @@ C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\Servi
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.pdb
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.AssemblyReference.cache
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\bin\Debug\netstandard2.1\ServiceLayer.deps.json
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\bin\Debug\netstandard2.1\ServiceLayer.dll
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\bin\Debug\netstandard2.1\ServiceLayer.pdb
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\bin\Debug\netstandard2.1\DataLayer.dll
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\bin\Debug\netstandard2.1\DataLayer.pdb
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.AssemblyReference.cache
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.AssemblyInfo.cs
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.dll
+C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.pdb
