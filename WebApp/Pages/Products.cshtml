@@ -25,7 +25,7 @@
     @for (int i = 1; i <= Model.TotalPages; i++)
     {
         <li class="page-item @(i == Model.CurrPage ? "active" : "")">
-            <a asp-page="./Index" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
+            <a asp-page="./Products" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
         { "Search", "" },
         { "CurrPage", @i.ToString() },
         { "prodOrderOption", Model.prodOrderOption.ToString() }

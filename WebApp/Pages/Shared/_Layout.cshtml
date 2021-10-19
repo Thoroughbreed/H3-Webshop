@@ -43,6 +43,11 @@
                             </div>
                         </li>
                     </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                                  @await Component.InvokeAsync("ShoppingCart")      
+                        <!--    Above is the "old" MVC like method to invoke views  -->
+                        <!--<vc:shopping-cart></vc:shopping-cart>-->
+                    </ul>
                 </div>
             </div>
         </nav>

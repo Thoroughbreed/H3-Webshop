@@ -801,3 +801,4 @@ C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Page
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Products.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\_ProductListing.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Category.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Components\ShoppingCart\default.cshtml.g.cs
