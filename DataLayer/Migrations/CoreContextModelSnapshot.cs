@@ -16,7 +16,7 @@ namespace DataLayer.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.10")
+                .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("DataLayer.Models.Categories", b =>
@@ -303,7 +303,7 @@ namespace DataLayer.Migrations
                             Name = "Tunno - Vegansk tun",
                             Price = 32.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vegtunnosoj",
                             VendorID = 7
                         },
                         new
@@ -313,7 +313,7 @@ namespace DataLayer.Migrations
                             Name = "Røget tofu",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vantofsmok",
                             VendorID = 8
                         },
                         new
@@ -323,7 +323,7 @@ namespace DataLayer.Migrations
                             Name = "Naturel tofu",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vantofnat",
                             VendorID = 8
                         },
                         new
@@ -333,7 +333,7 @@ namespace DataLayer.Migrations
                             Name = "Seitan med karry",
                             Price = 26.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vegseitcurr",
                             VendorID = 4
                         },
                         new
@@ -343,7 +343,7 @@ namespace DataLayer.Migrations
                             Name = "Jackfruit confit",
                             Price = 22.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "natjackconf",
                             VendorID = 4
                         },
                         new
@@ -353,7 +353,7 @@ namespace DataLayer.Migrations
                             Name = "Økologisk kokosmælk",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "bioorgcocmil",
                             VendorID = 1
                         },
                         new
@@ -363,7 +363,7 @@ namespace DataLayer.Migrations
                             Name = "Instant cappuccino pulpver",
                             Price = 69.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vgncapinst",
                             VendorID = 2
                         },
                         new
@@ -373,7 +373,7 @@ namespace DataLayer.Migrations
                             Name = "Havredrik (natural)",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "drykoatnat",
                             VendorID = 2
                         },
                         new
@@ -383,7 +383,7 @@ namespace DataLayer.Migrations
                             Name = "Havredrik Barista Edition",
                             Price = 20.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "drykoatbar",
                             VendorID = 2
                         },
                         new
@@ -393,7 +393,7 @@ namespace DataLayer.Migrations
                             Name = "Havrekakao",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "drykoatcoc",
                             VendorID = 2
                         },
                         new
@@ -403,7 +403,7 @@ namespace DataLayer.Migrations
                             Name = "Vegansk Iskaffe",
                             Price = 17.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "iceoatespess",
                             VendorID = 3
                         },
                         new
@@ -413,7 +413,7 @@ namespace DataLayer.Migrations
                             Name = "Veganske trøfler i gaveæske (salted caramel)",
                             Price = 55.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "ddsalttrufbox",
                             VendorID = 1
                         },
                         new
@@ -423,7 +423,7 @@ namespace DataLayer.Migrations
                             Name = "Candy Kittens - cherry flavour",
                             Price = 32.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "cankitcher",
                             VendorID = 1
                         },
                         new
@@ -433,7 +433,7 @@ namespace DataLayer.Migrations
                             Name = "Finsk lakrids",
                             Price = 28.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "hpyreinlico",
                             VendorID = 5
                         },
                         new
@@ -443,7 +443,7 @@ namespace DataLayer.Migrations
                             Name = "Lakridshyl",
                             Price = 12.50m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "kingminilico",
                             VendorID = 5
                         },
                         new
@@ -453,7 +453,7 @@ namespace DataLayer.Migrations
                             Name = "Mojito Flowpack (vingummi)",
                             Price = 5.50m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "wallmojisml",
                             VendorID = 6
                         },
                         new
@@ -463,7 +463,7 @@ namespace DataLayer.Migrations
                             Name = "Cosmopolitan Flowpack (vingummi)",
                             Price = 5.50m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "wallcosmosml",
                             VendorID = 6
                         },
                         new
@@ -473,7 +473,7 @@ namespace DataLayer.Migrations
                             Name = "Mojito Cube (vingummi)",
                             Price = 59.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "wallmojicube",
                             VendorID = 6
                         },
                         new
@@ -483,7 +483,7 @@ namespace DataLayer.Migrations
                             Name = "Cosmopolitan Cube (vingummi)",
                             Price = 59.00m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "wallcosmocube",
                             VendorID = 6
                         },
                         new
@@ -493,7 +493,7 @@ namespace DataLayer.Migrations
                             Name = "Nuttercups - almonds (fyldte chokolader)",
                             Price = 14.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "ddnutteralmond",
                             VendorID = 8
                         },
                         new
@@ -503,7 +503,7 @@ namespace DataLayer.Migrations
                             Name = "Sour cream and onion kartoffelchips",
                             Price = 28.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "heimscolpota",
                             VendorID = 4
                         },
                         new
@@ -513,7 +513,7 @@ namespace DataLayer.Migrations
                             Name = "Sour cream and onion linsechips",
                             Price = 28.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "heimscolentil",
                             VendorID = 4
                         },
                         new
@@ -523,7 +523,7 @@ namespace DataLayer.Migrations
                             Name = "Tang chips - sweet soy & sea salt",
                             Price = 12.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "itsuweedcrisp",
                             VendorID = 4
                         },
                         new
@@ -533,7 +533,7 @@ namespace DataLayer.Migrations
                             Name = "Veganske flæskevær",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "pigoutrindshellahot",
                             VendorID = 8
                         },
                         new
@@ -543,7 +543,7 @@ namespace DataLayer.Migrations
                             Name = "Soya pasta",
                             Price = 30.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "vitasoypasta",
                             VendorID = 4
                         },
                         new
@@ -553,7 +553,7 @@ namespace DataLayer.Migrations
                             Name = "Hørfrømel",
                             Price = 19.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "draflaxflour",
                             VendorID = 4
                         },
                         new
@@ -563,7 +563,7 @@ namespace DataLayer.Migrations
                             Name = "Shirataki nudler",
                             Price = 16.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "bioshiraudonnood",
                             VendorID = 1
                         },
                         new
@@ -573,7 +573,7 @@ namespace DataLayer.Migrations
                             Name = "Shirataki ris",
                             Price = 18.95m,
                             PriceDiscountID = 1,
-                            SKU = "",
+                            SKU = "bioshirarice",
                             VendorID = 1
                         },
                         new
@@ -583,7 +583,7 @@ namespace DataLayer.Migrations
                             Name = "Frugtkassen (min. 4 kg)",
                             Price = 165.00m,
                             PriceDiscountID = 1,
-                            SKU = ""
+                            SKU = "fruitbox"
                         });
                 });
 

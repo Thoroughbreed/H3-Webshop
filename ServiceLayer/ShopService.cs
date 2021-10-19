@@ -8,12 +8,12 @@ namespace ServiceLayer
 {
     public class ShopService
     {
-        private readonly CoreContext _context = new CoreContext();
+        private readonly CoreContext _context;
 
         public ShopService(CoreContext ct)
-        { }
+        { _context = ct; }
         public ShopService()
-        { }
+        { _context = new CoreContext(); }
         public void Commit()
         {
             _context.SaveChanges();
@@ -117,9 +117,9 @@ namespace ServiceLayer
         public List<Products> GetProducts(int currPage, int pageSize, ProductOrderOptions options, string search = null)
         {
             return GetProductsQ(search)
+                .OrderByOptions(options)
                 .Skip((currPage - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByOptions(options)
                 .ToList();
         }
     }
@@ -144,9 +144,9 @@ namespace ServiceLayer
         public List<Customers> GetCustomers(int currPage, int pageSize, CustomerOrderOptions options, string search = null)
         {
             return GetCustomersQ(search)
+                .OrderByOptions(options)
                 .Skip((currPage - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByOptions(options)
                 .ToList();
         }
     }

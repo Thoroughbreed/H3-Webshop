@@ -19,23 +19,19 @@ namespace WebApp.Areas.Admin
         public int CurrPage { get; set; } = 1;
         [BindProperty(SupportsGet = true)]
         public ProductOrderOptions prodOrderOption { get; set; } = 0;
-        public CustomerOrderOptions custOrderOption { get; set; } = 0;
+        [TempData]
+        public string Message { get; set; }
+
 
         public int PageCount { get; set; }
-        public int PageSize { get; set; } = 10;
+        public int PageSize { get; set; } = 8;
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(PageCount, PageSize));
 
-
-        public List<Customers> Customers { get; set; }
         public List<Products> Products { get; set; }
 
         public void OnGet()
         {
-            PageCount   = _admin.GetCustomersQ(Search).Count();
-            PageCount  += _service.GetProductsQ(Search).Count();
-            //Customers   = _admin.GetCustomersQ(Search).ToList();
-            //Products    = _service.GetProductsQ(Search).ToList();
-            Customers = _admin.GetCustomers(CurrPage, PageSize, custOrderOption, Search);
+            PageCount  = _service.GetProductsQ(Search).Count();
             Products = _service.GetProducts(CurrPage, PageSize, prodOrderOption, Search);
         }
     }
