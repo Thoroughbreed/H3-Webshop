@@ -7,15 +7,13 @@ namespace ServiceLayer
 {
     public enum ProductOrderOptions
     {
-        [Display(Name = "Sort by name ↓")]
+        [Display(Name = "navn")]
         ByName = 0,
-        [Display(Name = "Sort by category ↓")]
-        ByCategory,
-        [Display(Name = "Sort by vendor ↓")]
+        [Display(Name = "producent")]
         ByVendor,
-        [Display(Name = "Price ↓")]
+        [Display(Name = "pris stigende")]
         ByPriceAsc,
-        [Display(Name = "Price ↑")]
+        [Display(Name = "pris faldende")]
         ByPriceDesc
     }
 
@@ -44,8 +42,6 @@ namespace ServiceLayer
                     return products.OrderBy(x => x.Price);
                 case ProductOrderOptions.ByPriceDesc:
                     return products.OrderByDescending(x => x.Price);
-                case ProductOrderOptions.ByCategory:
-                    return products.OrderBy(x => x.Category.Category);
                 case ProductOrderOptions.ByVendor:
                     return products.OrderBy(x => x.Vendor.Name);
                 default:

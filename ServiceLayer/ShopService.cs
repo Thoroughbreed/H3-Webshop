@@ -18,6 +18,8 @@ namespace ServiceLayer
         {
             _context.SaveChanges();
         }
+
+        #region CLI METHODS - DEPRECATED
         /// <summary>
         /// Adding a new user to context
         /// </summary>
@@ -42,12 +44,6 @@ namespace ServiceLayer
             };
             _context.Customers.Add(cust);
         }
-
-        public void AddUser(Customers customer)
-        {
-            _context.Customers.Add(customer);
-        }
-
         /// <summary>
         /// Deleting user from context
         /// </summary>
@@ -57,7 +53,6 @@ namespace ServiceLayer
             var user = _context.Customers.Where(u => u == customer).FirstOrDefault();
             _context.Customers.Remove(user);
         }
-
         /// <summary>
         /// Editing already existing user
         /// </summary>
@@ -80,12 +75,6 @@ namespace ServiceLayer
             cust.PhoneMain = PhoneMain;
             cust.PhoneMobile = PhoneCell;
         }
-
-        public void EditUser(Customers customer)
-        {
-            _context.Customers.Add(customer);
-        }
-
         /// <summary>
         /// Creating a new order connected to current user
         /// </summary>
@@ -99,7 +88,19 @@ namespace ServiceLayer
 
             _context.Orders.Add(order);
         }
+        #endregion
 
+        public void AddUser(Customers customer)
+        {
+            _context.Customers.Add(customer);
+        }
+
+        public void EditUser(Customers customer)
+        {
+            _context.Customers.Update(customer);
+        }
+
+        #region IQueryables
         public IQueryable<Products> GetProductsQ(string? searchTerm)
         {
             var q = _context.Products.Include(p => p.Category)
@@ -114,6 +115,37 @@ namespace ServiceLayer
                                 p.Category.Category.Contains(searchTerm) ||
                                 p.Vendor.Name.Contains(searchTerm));
         }
+        public IQueryable<Products> GetProductByCatQ(int catID)
+        {
+            return GetProductsQ("").Where(p => p.CategoryID == catID);
+        }
+
+        public IQueryable<Products> GetProductByIDQ(int prodID)
+        {
+            return GetProductsQ("").Where(p => p.ProductID == prodID);
+        }
+
+        public IQueryable<Categories> GetCategoryByIDQ(int catID)
+        {
+            return _context.Categories.Where(c => c.CategoryID == catID);
+        }
+        #endregion
+
+        public Products GetProduct(Products product)
+        {
+            return GetProductByIDQ(product.ProductID).FirstOrDefault();
+        }
+
+        public List<Products> GetProductsByCat(int currPage, int pageSize, int catID, ProductOrderOptions options, string search = null)
+        {
+            return GetProductsQ(search)
+                .Where(p => p.CategoryID == catID)
+                .OrderByOptions(options)
+                .Skip((currPage - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+        }
+
         public List<Products> GetProducts(int currPage, int pageSize, ProductOrderOptions options, string search = null)
         {
             return GetProductsQ(search)
@@ -123,21 +155,13 @@ namespace ServiceLayer
                 .ToList();
         }
 
-        public IQueryable<Products> GetProductByIDQ(int prodID)
-        {
-            return GetProductsQ("").Where(p => p.ProductID == prodID);
-        }
 
-        public Products GetProduct(Products product)
-        {
-            return GetProductByIDQ(product.ProductID).FirstOrDefault();
-        }
     }
 
     public class AdminService
     {
         private readonly CoreContext _context = new CoreContext();
-        public IQueryable<Customers> GetCustomersQ(string ? searchTerm)
+        public IQueryable<Customers> GetCustomersQ(string? searchTerm)
         {
             var q = _context.Customers
                 .Include(c => c.City)

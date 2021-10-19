@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body class="alert-info">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light badge-info border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">WebApp</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><img  src="~/img/logo.png" height="80" /><b>Vegan Living</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +20,27 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hjem</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Products">Alle produkter</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kategorier
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="1">Kød &amp; pålæg</a>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="5">Nødder &amp; bælgfrugter</a>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="8">Bønner, frø &amp; linser</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="4">Snacks, kiks &amp; kage</a>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="7">Glutenfri</a>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="3">Slik &amp; chokolade</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="2">Drikke</a>
+                                <a class="dropdown-item" asp-page="./Category" asp-route-catID="9">Frisk frugt &amp; grønt</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -36,10 +53,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer badge-info">
         @RenderSection("footer", required: false)
         <div class="container">
-            &copy; 2021 - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - Vegan Living
         </div>
     </footer>
 

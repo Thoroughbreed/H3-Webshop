@@ -798,3 +798,6 @@ C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\CustomerInfo.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\EditProduct.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Products.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\_ProductListing.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Category.cshtml.g.cs
