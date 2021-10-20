@@ -11,6 +11,7 @@ namespace WebApp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public string TestString { get; set; } = "YES!";
 
         public IndexModel(ILogger<IndexModel> logger)
         {
