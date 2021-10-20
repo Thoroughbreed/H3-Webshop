@@ -17,12 +17,12 @@
     <label asp-for="prodOrderOption">Order product by: </label>
     <select asp-for="prodOrderOption" asp-items="Html.GetEnumSelectList<ProductOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
 </form>
-<div class="card-deck">
+<table class="table table-striped">
     @foreach (var prod in Model.Products)
     {
         <partial name="_ProductListing" model="prod" />
     }
-</div>
+</table>
 <ul class="pagination">
     @for (int i = 1; i <= Model.TotalPages; i++)
     {

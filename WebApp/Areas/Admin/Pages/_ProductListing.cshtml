@@ -1,25 +1,29 @@
 ﻿@model DataLayer.Models.Products
-
-
-<div class="col-sm-3">
-    <div class="card my-3">
-        <img class="card-img-top" src="~/img/products/@Url.Content(Model.SKU.ToString() + ".png")" />
-        <div class="card-body">
-            <h5 class="card-title">@Model.Name</h5>
-            <p class="card-text">@Model.Category.Category</p>
-            <p class="card-text">@Model.Price kr</p>
-            @if (Model.VendorID.HasValue)
-            {
-                <p class="card-text">@Model.Vendor.Name</p>
-            }
-            </div>
-        <div class="card-footer text-muted">
-            <a asp-page="./EditProduct" asp-route-prodID="@Model.ProductID">
-                <i class="fas fa-edit"></i>
-            </a>
-            <a asp-page="./Delete" asp-route-restaurantId="@Model.ProductID">
-                <i class="fas fa-trash"></i>
-            </a>
-        </div>
-    </div>
-</div>
+<tr>
+    <td>
+        @Model.Name
+    </td>
+    <td>
+        @Model.Category.Category
+    </td>
+    <td>
+        @Model.Price
+    </td>
+    <td>
+        @if (Model.VendorID.HasValue)
+        {
+            @Model.Vendor.Name
+        }
+    </td>
+    <td>
+        <a asp-page="./ProductDetail" asp-route-prodID="@Model.ProductID">
+            <i class="fas fa-info-circle"></i>
+        </a>
+        <a asp-page="./EditProduct" asp-route-prodID="@Model.ProductID">
+            <i class="fas fa-edit"></i>
+        </a>
+        <a asp-page="./Delete" asp-route-restaurantId="@Model.ProductID">
+            <i class="fas fa-trash"></i>
+        </a>
+    </td>
+</tr>
