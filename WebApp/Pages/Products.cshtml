@@ -21,21 +21,24 @@
         <partial name="_ProductListing" model="prod" />
     }
 </div>
-<ul class="pagination">
-    @for (int i = 1; i <= Model.TotalPages; i++)
-    {
-        <li class="page-item @(i == Model.CurrPage ? "active" : "")">
-            <a asp-page="./Products" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
+@if (Model.PageCount > Model.PageSize)
+{
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.CurrPage ? "active" : "")">
+                <a asp-page="./Products" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
         { "Search", "" },
         { "CurrPage", @i.ToString() },
         { "prodOrderOption", Model.prodOrderOption.ToString() }
             })">@i</a>
         </li>
-    }
-</ul>
-@section footer {
-    @if (Model.Message != null)
-    {
-        <div class="alert alert-info">@Model.Message</div>
-    }
+        }
+    </ul>
 }
+    @section footer {
+        @if (Model.Message != null)
+        {
+            <div class="alert alert-info">@Model.Message</div>
+        }
+    }
