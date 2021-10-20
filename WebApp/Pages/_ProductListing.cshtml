@@ -3,21 +3,25 @@
 
 <div class="col-sm-3">
     <div class="card my-3 ">
-        <img class="card-img-top" src="~/img/products/@Url.Content(Model.SKU.ToString() + ".png")" />
-        <div class="card-body">
-            <h5 class="card-title">@Model.Name</h5>
-            <p class="card-text">@Model.Category.Category</p>
-            <p class="card-text">@Model.Price kr</p>
-            @if (Model.VendorID.HasValue)
-            {
-                <p class="card-text">@Model.Vendor.Name</p>
-            }
+        <a class="text-decoration-none" asp-page="./Detail" asp-route-prodID="@Model.ProductID">
+            <img class="card-img-top" src="~/img/products/@Url.Content(Model.SKU.ToString() + ".png")" />
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text">@Model.Category.Category</p>
+                <p class="card-text">@Model.Price kr</p>
+                @if (Model.VendorID.HasValue)
+                {
+                    <p class="card-text">@Model.Vendor.Name</p>
+                }
             </div>
+        </a>
         <div class="card-footer text-muted">
-            <a asp-page="./Detail" asp-route-prodID="@Model.ProductID">
+            <a class="btn btn-info" asp-page="./Detail" asp-route-prodID="@Model.ProductID">
+                Se mere
                 <i class="fas fa-info-circle"></i>
             </a>
-            <a asp-page="./Error" asp-route-prodID="@Model.ProductID">
+            <a class="btn btn-success" onclick="checkout('@Model.Name')">
+                Tilføj til kurv
                 <i class="fas fa-shopping-basket"></i>
             </a>
         </div>

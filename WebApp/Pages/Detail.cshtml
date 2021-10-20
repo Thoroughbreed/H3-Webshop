@@ -1,0 +1,28 @@
+﻿@page
+@model WebApp.Pages.DetailModel
+@{
+}
+<h2>@Model.Product.Name</h2>
+<div>
+    <img src="~/img/products/@Url.Content(Model.Product.SKU.ToString() + ".png")" class="img-fluid" />
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Category.Category)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Category.Category)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Product.Price)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Product.Price)
+    </dd>
+</dl>
+<a asp-page="./Products" class="btn btn-info">Alle produkter</a>
+<a class="btn btn-success" onclick="checkout('@Model.Product.Name')">
+    Tilføj til kurv
+    <i class="fas fa-shopping-basket"></i>
+</a>
