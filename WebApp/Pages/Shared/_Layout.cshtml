@@ -11,18 +11,15 @@
         function checkout(test) {
             let timerInterval
             Swal.fire({
-                title: 'Du har tilføjet <test></test> til kurven.',
-                html: '<a href="#" class="btn btn-info">Fortsæt med at handle</a> <a href="#" class="btn btn-info">Gå til indkøbskurv</a>',
-                timer: 2000,
+                position: 'top',
+                title: 'Sweet!',
+                html: 'Du har tilføjet <b></b> til kurven.<br><a href="#" class="btn btn-info">Fortsæt med at handle</a> <a href="#" class="btn btn-info">Gå til indkøbskurv</a>',
+                timer: 3000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading()
-                    const a = Swal.getHtmlContainer().querySelector('test')
-                    a.textContent = "wtf"
                     const b = Swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft()
-                    }, 100)
+                        b.textContent = test
                 },
                 willClose: () => {
                     clearInterval(timerInterval)
