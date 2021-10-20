@@ -18,6 +18,15 @@
     <select asp-for="prodOrderOption" asp-items="Html.GetEnumSelectList<ProductOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
 </form>
 <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Navn</th>
+            <th scope="col">Kategori</th>
+            <th scope="col">Pris</th>
+            <th scope="col">Producent</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
     @foreach (var prod in Model.Products)
     {
         <partial name="_ProductListing" model="prod" />

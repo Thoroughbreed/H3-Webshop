@@ -19,15 +19,15 @@ namespace ServiceLayer
 
     public enum CustomerOrderOptions
     {
-        [Display(Name = "Sort by first name ↓")]
+        [Display(Name = "fornavn")]
         ByFName = 0,
-        [Display(Name = "Sort by last name ↓")]
+        [Display(Name = "efternavn")]
         ByLName,
-        [Display(Name = "Sort by city ↓")]
+        [Display(Name = "by")]
         ByCity,
-        [Display(Name = "Sort by orders ↓")]
+        [Display(Name = "antal ordrer stigende")]
         ByOrdersAsc,
-        [Display(Name = "Sort by orders ↑")]
+        [Display(Name = "antal ordrer faldende")]
         ByOrdersDesc
     }
     public static class SortOptions
@@ -57,7 +57,7 @@ namespace ServiceLayer
                 case CustomerOrderOptions.ByLName:
                     return products.OrderBy(x => x.LName);
                 case CustomerOrderOptions.ByCity:
-                    return products.OrderByDescending(x => x.City.Name);
+                    return products.OrderBy(x => x.City.Name);
                 case CustomerOrderOptions.ByOrdersAsc:
                     return products.OrderBy(x => x.OrderAmount);
                 case CustomerOrderOptions.ByOrdersDesc:

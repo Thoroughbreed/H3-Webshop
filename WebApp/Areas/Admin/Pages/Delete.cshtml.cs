@@ -22,9 +22,12 @@ namespace WebApp.Areas.Admin.Pages
             }
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(int id)
         {
+            Product = _admin.GetProductByID(id);
             _admin.Delete(Product);
+            _admin.Commit();
+            TempData["Message"] = $"Produkt slettet ... du har altså slettet {Product.Name}!";
             return RedirectToPage("./Index");
         }
     }

@@ -14,11 +14,22 @@
             </button>
         </div>
     </div>
-    <label asp-for="CustOrderOption">Order product by: </label>
-    <select asp-for="CustOrderOption" asp-items="Html.GetEnumSelectList<ProductOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
+    <label asp-for="CustOrderOption">Sorter efter: </label>
+    <select asp-for="CustOrderOption" asp-items="Html.GetEnumSelectList<CustomerOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
 </form>
 
 <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID#</th>
+            <th scope="col">Fornavn</th>
+            <th scope="col">Efternavn</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">Antal ordrer</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Postnummer/by</th>
+        </tr>
+    </thead>
     @foreach (var cust in Model.Customers)
     {
         <partial name="_CustomerListing" model="cust" />
@@ -31,12 +42,11 @@
                 <a asp-page="./Index" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
         { "Search", "" },
         { "CurrPage", @i.ToString() },
-        { "prodOrderOption", Model.CustOrderOption.ToString() }
+        { "custOrderOption", Model.CustOrderOption.ToString() }
             })">@i</a>
         </li>
     }
     </ul>
-    <a asp-page="./Edit" asp-route-BookId="" class="btn btn-info">Add New</a>
     @section footer {
         @if (Model.Message != null)
         {

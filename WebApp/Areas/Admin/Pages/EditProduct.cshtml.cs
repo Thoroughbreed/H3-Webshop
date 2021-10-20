@@ -79,6 +79,7 @@ namespace WebApp.Areas.Admin.Pages
                 _admin.AddNew(Product);
             }
             _admin.Commit();
+            TempData["Message"] = "Produkt opdateret!";
             return RedirectToPage("./Detail", new { prodID = Product.ProductID });
         }
     }

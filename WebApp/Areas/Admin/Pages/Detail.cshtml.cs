@@ -14,6 +14,8 @@ namespace WebApp.Areas.Admin.Pages
         private readonly ShopService _service = new();
 
         public Products Product { get; set; }
+        [TempData]
+        public string Message { get; set; }
         public void OnGet(int? prodID)
         {
             Product = _service.GetProductByIDQ(prodID.Value).FirstOrDefault();

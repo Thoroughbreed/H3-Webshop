@@ -35,3 +35,9 @@
 </dl>
 <a asp-page="./Index" class="btn btn-info">Alle produkter</a>
 <a asp-page="./EditProduct" asp-route-prodID="@Model.Product.ProductID" class="btn btn-outline-danger">Rediger produkt</a>
+@section footer {
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-info">@Model.Message</div>
+    }
+}
