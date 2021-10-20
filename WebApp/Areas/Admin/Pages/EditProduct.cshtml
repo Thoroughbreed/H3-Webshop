@@ -5,26 +5,92 @@
 }
 
 
-<form method="post">
-    <input type="hidden" asp-for="Product.ProductID" />
-    <div class="form-group">
-        <label asp-for="Product.Name" />
-        <input asp-for="Product.Name" class="form-control" />
-        <span class="text-danger" asp-validation-for="Product.Name"></span>
+<h2>@Model.Product.Name</h2>
+<div class="row">
+    <div class="col-6">
+        <img src="~/img/products/@Url.Content(Model.Product.SKU.ToString() + ".png")" class="img-fluid" />
     </div>
-    <div class="form-group">
-        <label asp-for="Product.Category.Category" />
-        <input asp-for="Product.Category.Category" class="form-control" />
-        <span class="text-danger" asp-validation-for="Product.Category.Category"></span>
+    <div class="col-md-6">
+        <form method="post">
+            <input type="hidden" asp-for="Product.ProductID" />
+            <input type="hidden" asp-for="Product.VendorID" />
+            <input type="hidden" asp-for="Product.CategoryID" />
+            <input type="hidden" asp-for="Product.PriceDiscountID" />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Product.ProductID)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Product.ProductID)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Product.SKU)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Product.SKU)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Product.Category.Category)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Product.Category.Category)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Product.Vendor.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Product.Vendor.Name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Product.Price)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Product.Price)
+                </dd>
+            </dl>
+                <div class="form-group">
+                    <label asp-for="Product.Name"></label>
+                    <input asp-for="Product.Name" class="form-control" type="text" size="100%"/>
+                    <span class="text-danger" asp-validation-for="Product.Name"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Product.Price"></label>
+                        <input asp-for="Product.Price" class="form-control" size="100%" />
+                        <span class="text-danger" asp-validation-for="Product.Price"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Product.SKU"></label>
+                        <input asp-for="Product.SKU" class="form-control" size="100%" />
+                        <span class="text-danger" asp-validation-for="Product.SKU"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <label asp-for="Product.VendorID"></label>
+                        <select asp-for="Product.VendorID" class="form-control"></select>
+                        <select id="Vendors"></select>
+                        <span class="text-danger" asp-validation-for="Product.VendorID"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Product.PriceDiscountID"></label>
+                        <select asp-for="Product.PriceDiscountID" class="form-control"></select>
+                        <span class="text-danger" asp-validation-for="Product.PriceDiscountID"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Product.CategoryID"></label>
+                        <select asp-for="Product.CategoryID" class="form-control"></select>
+                        <span class="text-danger" asp-validation-for="Product.CategoryID"></span>
+                    </div>
+                </div>
+                <a asp-area="Admin" asp-page="./Detail" asp-route-prodID="@Model.Product.ProductID" class="btn btn-outline-info">Tilbage</a>
+                <a asp-area="Admin" asp-page="./Index" class="btn btn-info">Til oversigt</a>
+                <button type="submit" class="btn btn-outline-danger">Gem ændringer</button>
+            <a asp-area="Admin" asp-page="./Delete" class="btn btn-danger">Slet produkt</a>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Product.Price" />
-        <input asp-for="Product.Price" class="form-control" />
-        <span class="text-danger" asp-validation-for="Product.Price"></span>
-    </div>
-    <button type="submit" class="btn btn-info">Save</button>
-</form>
 
+</div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

@@ -804,3 +804,4 @@ C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Category.c
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Components\ShoppingCart\default.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Detail.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Detail.cshtml.g.cs

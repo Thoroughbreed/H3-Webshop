@@ -16,13 +16,13 @@
         }
     </td>
     <td>
-        <a asp-page="./ProductDetail" asp-route-prodID="@Model.ProductID">
+        <a asp-area="Admin" asp-page="./Detail" asp-route-prodID="@Model.ProductID">
             <i class="fas fa-info-circle"></i>
         </a>
-        <a asp-page="./EditProduct" asp-route-prodID="@Model.ProductID">
+        <a asp-area="Admin" asp-page="./EditProduct" asp-route-prodID="@Model.ProductID">
             <i class="fas fa-edit"></i>
         </a>
-        <a asp-page="./Delete" asp-route-restaurantId="@Model.ProductID">
+        <a asp-area="Admin" asp-page="./Delete" asp-route-prodID="@Model.ProductID">
             <i class="fas fa-trash"></i>
         </a>
     </td>

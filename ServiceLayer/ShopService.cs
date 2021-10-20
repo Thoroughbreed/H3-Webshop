@@ -175,6 +175,11 @@ namespace ServiceLayer
                                 c.City.Name.Contains(searchTerm));
         }
 
+        public IQueryable<Vendors> GetVendorsQ()
+        {
+            return _context.Vendors.Where(v => v.VendorID > 0);
+        }
+
         public List<Customers> GetCustomers(int currPage, int pageSize, CustomerOrderOptions options, string search = null)
         {
             return GetCustomersQ(search)
