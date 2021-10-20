@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace ServiceLayer
 {
@@ -180,6 +181,16 @@ namespace ServiceLayer
             return _context.Vendors.Where(v => v.VendorID > 0);
         }
 
+        public IQueryable<Categories> GetCategoriesQ()
+        {
+            return _context.Categories.Where(c => c.CategoryID > 0);
+        }
+
+        public IQueryable<PriceDiscounts> GetPriceDiscountsQ()
+        {
+            return _context.PriceDiscounts.Where(p => p.PriceDiscountID > 0);
+        }
+
         public List<Customers> GetCustomers(int currPage, int pageSize, CustomerOrderOptions options, string search = null)
         {
             return GetCustomersQ(search)
@@ -187,6 +198,33 @@ namespace ServiceLayer
                 .Skip((currPage - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();
+        }
+
+        public void Update(object item)
+        {
+            _context.Update(item);
+        }
+
+        public void AddNew(object item)
+        {
+            _context.Add(item);
+        }
+
+        public void Delete(object item)
+        {
+            _context.Remove(item);
+        }
+
+        public void Commit()
+        {
+            _context.SaveChanges();
+        }
+
+        public Products GetProductByID(int id)
+        {
+            return _context.Products
+                .Where(p => p.ProductID == id)
+                .FirstOrDefault();
         }
     }
 }

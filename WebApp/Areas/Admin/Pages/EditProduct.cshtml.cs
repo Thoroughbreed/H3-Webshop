@@ -18,17 +18,37 @@ namespace WebApp.Areas.Admin.Pages
         public Products Product { get; set; }
 
 
-        public SelectList Vendors { get; set; }
-        public SelectList Categories { get; set; }
-        public SelectList PriceDiscount { get; set; }
-        public List<Vendors> VendorList { get; set; }
+        [BindProperty]
+        public List<SelectListItem> Vendors { get; set; }
+
+        [BindProperty]
+        public List<SelectListItem> Categories { get; set; }
+
+        [BindProperty]
+        public List<SelectListItem> PriceDiscount { get; set; }
 
 
         public IActionResult OnGet(int? prodID)
         {
-            VendorList = _admin.GetVendorsQ().ToList();
-            Vendors = new SelectList(VendorList);
+            #region Populate dropdown
+            Vendors = _admin.GetVendorsQ().Select(v => new SelectListItem
+            {
+                Value = v.VendorID.ToString(),
+                Text = v.Name
+            }).ToList();
 
+            Categories = _admin.GetCategoriesQ().Select(c => new SelectListItem
+            {
+                Value = c.CategoryID.ToString(),
+                Text = c.Category
+            }).ToList();
+
+            PriceDiscount = _admin.GetPriceDiscountsQ().Select(p => new SelectListItem
+            {
+                Value = p.PriceDiscountID.ToString(),
+                Text = p.DiscountValue + " (" + p.DiscountCode + ")"
+            }).ToList();
+            #endregion
             if (prodID.HasValue)
             {
                 Product = _service.GetProductByIDQ(prodID.Value).FirstOrDefault();
@@ -37,13 +57,29 @@ namespace WebApp.Areas.Admin.Pages
             {
                 Product = new Products();
             }
-
-
             if (Product == null)
             {
                 return RedirectToPage("./NotFound");
             }
             return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            if (Product.ProductID > 0)
+            {
+                _admin.Update(Product);
+            }
+            else
+            {
+                _admin.AddNew(Product);
+            }
+            _admin.Commit();
+            return RedirectToPage("./Detail", new { prodID = Product.ProductID });
         }
     }
 }

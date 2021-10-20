@@ -1,0 +1,14 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.DeleteModel
+@{
+}
+
+<h1>SLET!</h1>
+
+<div class="alert alert-danger">
+    Er du nu også <em>helt</em> sikker på at du vil slette @Model.Product.Name?
+</div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Ja sgu!</button>
+    <a asp-area="Admin" asp-page="./Detail" asp-route-prodID="@Model.Product.ProductID" class="btn btn-outline-warning">Nej tak du ...</a>
+</form>
