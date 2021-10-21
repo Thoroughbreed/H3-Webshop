@@ -1,0 +1,43 @@
+﻿@page
+@model WebApp.Pages.CheckoutModel
+@{
+}
+<h1>Fuck yeah! Checkout desk!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+
+        </div>
+        <div class="col-4">
+            @foreach (var item in Model.Cart)
+            {
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Vare:
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.Products.Name
+                    </dd>
+                    <dt class="col-sm-2">
+                        Pris:
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.Products.Price
+                    </dd>
+                    <dt class="col-sm-2">
+                        Antal:
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.Amount
+                    </dd>
+                    <dt class="col-sm-2">
+                        Total pris:
+                    </dt>
+                    <dd class="col-sm-10">
+                        @item.LinePrice
+                    </dd>
+                </dl>
+            }
+        </div>
+    </div>
+</div>
