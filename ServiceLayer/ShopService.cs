@@ -130,6 +130,14 @@ namespace ServiceLayer
         {
             return _context.Categories.Where(c => c.CategoryID == catID);
         }
+        
+        public IQueryable<OrderItems> GetOrderItemsQ()
+        {
+            return _context.OrderItems
+                    .Include(o => o.ProductID)
+                    .Include(o => o.OrderID)
+                    .AsNoTracking();
+        }
         #endregion
 
         public Products GetProduct(Products product)

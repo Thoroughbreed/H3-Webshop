@@ -2,3 +2,37 @@
 @model WebApp.Pages.CartModel
 @{
 }
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Navn</th>
+            <th scope="col">Antal</th>
+            <th scope="col">Pris</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.Products)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Model.cartCookie.Find(a => a.ProductID == item.ProductID).Amount
+            </td>
+            <td>
+                @{ var a = @Model.cartCookie.Find(a => a.ProductID == item.ProductID).Amount;
+                    var b = @item.Price;
+                    var result = a * b;
+                } @result
+            </td>
+        </tr>
+    }
+    <tfoot>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </tfoot>
+
+</table>
