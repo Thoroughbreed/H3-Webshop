@@ -16,7 +16,7 @@ Kunder bliver oprettet i databasen ved hvert køb, og man kan så tilvælge at o
 I første omgang er "SKU" tom under Products, SKU er "Stock keeping unit" og er en intern "kode" per produkt der bliver brugt på lageret. Den er ikke med i den initielle data seeding, da dette kun er en test og lageroversigt først kommer i de senere dele af projektet.
 
 #### Class diagram
-![ER diagram over klasser](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/Webshop_Class_Diagram.png?raw=true)
+![ER diagram over klasser](https://github.com/Thoroughbreed/H3-Webshop/blob/master/Webshop_Class_Diagram.png?raw=true)
 
 ### Service Layer
 Servicelayer er bygget op af flere services, alt efter hvad der skal gøres. 
@@ -51,4 +51,4 @@ Der er tilknyttet nogle enkelte unit-tests der tester de kald der er i servicela
 ### Database
 Databasen er en MSSQL Express
 #### ER Diagram
-![ER diagram over databasen](https://github.com/Thoroughbreed/H3-Webshop/blob/feature/ER%20Diagram%20WebShop.png?raw=true)
+![ER diagram over databasen](https://github.com/Thoroughbreed/H3-Webshop/blob/master/ER%20Diagram%20WebShop.png?raw=true)
