@@ -19,6 +19,7 @@ namespace WebApp.Pages
 
         public void OnGet()
         {
+            string mike = "idiot";
         }
     }
 }
