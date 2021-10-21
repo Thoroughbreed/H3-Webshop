@@ -164,7 +164,51 @@ namespace ServiceLayer
                 .ToList();
         }
 
+        public Orders CheckoutCustomer(Customers customer, List<OrderItems> items)
+        {
+            customer.OrderAmount++;
+            Orders o = new Orders() { CustomerID = customer.CustomerID };
+            _context.Orders.Add(o);
+            _context.SaveChanges();
+            foreach (var item in items)
+            {
+                item.OrderID = o.OrderID;
+                _context.OrderItems.Add(item);
+            }
+            _context.SaveChanges();
+            return o;
+        }
 
+        public Orders CheckoutNewCust(Customers customer, List<OrderItems> items)
+        {
+            customer.OrderAmount = 1;
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            Orders o = new Orders() { CustomerID = customer.CustomerID };
+            _context.Orders.Add(o);
+            _context.SaveChanges();
+            foreach (var item in items)
+            {
+                item.OrderID = o.OrderID;
+                _context.OrderItems.Add(item);
+            }
+            _context.SaveChanges();
+            return o;
+        }
+
+        public Customers CustExist(Customers cust)
+        {
+            if (_context.Customers.Where(c => c.EMail == cust.EMail).Count() > 0)
+            {
+                return _context.Customers.Where(c => c.EMail == cust.EMail).FirstOrDefault();
+            }
+            return cust;
+        }
+
+        public Customers GetCustByID(int id)
+        {
+            return _context.Customers.Where(c => c.CustomerID == id).FirstOrDefault();
+        }
     }
 
     public class AdminService
