@@ -26,8 +26,8 @@ Der er tilknyttet nogle enkelte unit-tests der tester de kald der er i servicela
 
 ### Krav
 #### Krav til forsiden
-[x]Forsiden viser et antal produkter med et billede af hver, prisen, navn og en knap til at lægge varen i kurven
-[x]Der benyttes Paging således at forsiden kun viser et bestemt antal produkter ad gangen. Man kan se at der evt. er flere produkter
+-[x]Forsiden viser et antal produkter med et billede af hver, prisen, navn og en knap til at lægge varen i kurven
+-[x]Der benyttes Paging således at forsiden kun viser et bestemt antal produkter ad gangen. Man kan se at der evt. er flere produkter
 [x]Der er mulighed for at søge på "Brand" og på "Type" eller lignende
 [x]Der er også fritekst-søgning
 [x]Der er mulighed for stigende og faldende sortering
