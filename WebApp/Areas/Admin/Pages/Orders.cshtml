@@ -1,0 +1,48 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.OrdersModel
+@{
+}
+<h4>Welcome to the admin area!</h4>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID#</th>
+            <th scope="col">Fornavn</th>
+            <th scope="col">Efternavn</th>
+            <th scope="col">E-Mail</th>
+            <th scope="col">Antal varer</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Postnummer/by</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach (var order in Model.Orders)
+    {
+        <tr>
+
+            <td>@order.OrderID</td>
+            <td>@order.Customer.FName</td>
+            <td>@order.Customer.LName</td>
+            <td>@order.Customer.EMail</td>
+            <td>@order.OrderItems.Where(a => a.OrderID == order.OrderID).Count()</td>
+            <td>@order.Customer.RoadName @order.Customer.RoadNumber</td>
+            <td>@order.Customer.PostNumber @order.Customer.City.Name</td>
+            <td>
+                <a asp-page="./OrderDetail" asp-route-guid="@order.OrderGuid.ToString().Substring(0,8)">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<ul class="pagination">
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <li class="page-item @(i == Model.CurrPage ? "active" : "")">
+            <a asp-page="./Index" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
+        { "CurrPage", @i.ToString() }
+            })">@i</a>
+        </li>
+    }
+</ul>

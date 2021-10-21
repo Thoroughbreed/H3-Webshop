@@ -1,0 +1,23 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.DiscountsModel
+@{
+}
+<h4>Welcome to the admin area!</h4>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID#</th>
+            <th scope="col">Rabat %</th>
+            <th scope="col">Rabat kode</th>
+        </tr>
+    </thead>
+    @foreach (var disc in Model.Discounts)
+    {
+        <tr>
+            <td>@disc.PriceDiscountID</td>
+            <td>@disc.DiscountValue</td>
+            <td>@disc.DiscountCode</td>
+        </tr>
+    }
+</table>

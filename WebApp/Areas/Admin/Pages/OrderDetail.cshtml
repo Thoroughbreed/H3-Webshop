@@ -1,0 +1,42 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.OrderDetailModel
+@{ }
+<div class="row">
+    <div class="col-4">
+        <br /><br /><br />
+        Navn: @Model.Order.Customer.FName @Model.Order.Customer.LName<br />
+        Adresse: @Model.Order.Customer.RoadName @Model.Order.Customer.RoadNumber, @Model.Order.Customer.PostNumber @Model.Order.Customer.City.Name<br />
+        Email: @Model.Order.Customer.EMail<br />
+        Tel: @Model.Order.Customer.PhoneMain, Mobil: @Model.Order.Customer.PhoneMobile<br />
+        Oprettet: @Model.Order.PurchaseDate.ToString()
+    </div>
+    <div class="col-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Produkt</th>
+                    <th scope="col">Pris</th>
+                    <th scope="col">Antal</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Order.OrderItems)
+            {
+                <tr>
+                    <td>@item.Products.Name</td>
+                    <td>@item.Products.Price</td>
+                    <td>@item.Amount</td>
+                    <td>@item.LinePrice</td>
+                </tr>
+            }
+            <tfoot>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">I alt: </th>
+                    <th scope="col">@Model.Order.OrderItems.Sum(o => o.LinePrice)</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

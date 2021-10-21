@@ -820,3 +820,8 @@ C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.De
 C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
 C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.dll
 C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Orders.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Categories.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Discounts.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\Vendors.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\OrderDetail.cshtml.g.cs

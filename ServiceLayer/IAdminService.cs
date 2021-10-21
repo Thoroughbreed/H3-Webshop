@@ -16,7 +16,7 @@ namespace ServiceLayer
         public void Delete(object item);
         public void Commit();
         public Products GetProductByID(int id);
-
-
+        public IQueryable<Orders> GetOrdersQ();
+        public Orders GetOrdersByGUID(string guid);
     }
 }

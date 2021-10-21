@@ -1,0 +1,21 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.VendorsModel
+@{
+}
+<h4>Welcome to the admin area!</h4>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID#</th>
+            <th scope="col">Navn</th>
+        </tr>
+    </thead>
+    @foreach (var vend in Model.Vendors)
+    {
+        <tr>
+            <td>@vend.VendorID</td>
+            <td>@vend.Name</td>
+        </tr>
+    }
+</table>

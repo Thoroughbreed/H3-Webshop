@@ -130,7 +130,7 @@ namespace ServiceLayer
         {
             return _context.Categories.Where(c => c.CategoryID == catID);
         }
-        
+
         public IQueryable<OrderItems> GetOrderItemsQ()
         {
             return _context.OrderItems
@@ -276,6 +276,27 @@ namespace ServiceLayer
         {
             return _context.Products
                 .Where(p => p.ProductID == id)
+                .FirstOrDefault();
+        }
+
+        public IQueryable<Orders> GetOrdersQ()
+        {
+            return _context.Orders
+                .Include(o => o.OrderItems)
+                .Include(o => o.Customer)
+                    .ThenInclude(c => c.City)
+                .AsNoTracking();
+        }
+
+        public Orders GetOrdersByGUID(string guid)
+        {
+            return _context.Orders
+                .Where(o => o.OrderGuid.ToString().StartsWith(guid))
+                .Include(o => o.OrderItems)
+                    .ThenInclude(o => o.Products)
+                .Include(o => o.Customer)
+                    .ThenInclude(c => c.City)
+                .AsNoTracking()
                 .FirstOrDefault();
         }
     }

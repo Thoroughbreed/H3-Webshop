@@ -22,4 +22,3 @@ C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceL
 C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.CoreCompileInputs.cache
 C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.dll
 C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.pdb
-C:\Users\jaa\source\repos\Webshop\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.CopyComplete
