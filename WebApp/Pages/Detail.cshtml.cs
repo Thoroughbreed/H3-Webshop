@@ -14,10 +14,16 @@ namespace WebApp.Pages
 {
     public class DetailModel : PageModel
     {
-        private readonly ShopService _service = new();
+        private readonly IShopService _service;
         [TempData]
         public string Message { get; set; }
         public Products Product { get; set; }
+
+        public DetailModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
+
         public void OnGet(int? prodID)
         {
             Product = _service.GetProductByIDQ(prodID.Value).FirstOrDefault();

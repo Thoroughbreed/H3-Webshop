@@ -13,7 +13,7 @@ namespace WebApp.Pages
 {
     public class ProductsModel : PageModel
     {
-        private readonly ShopService _service = new();
+        private readonly IShopService _service;
 
         // Ordering and search
         [BindProperty(SupportsGet = true)]
@@ -33,6 +33,11 @@ namespace WebApp.Pages
         public string Message { get; set; }
         public List<Products> Products { get; set; }
 
+
+        public ProductsModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
         public void OnGet()
         {
             PageCount = _service.GetProductsQ(Search).Count();

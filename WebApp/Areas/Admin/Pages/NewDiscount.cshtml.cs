@@ -11,8 +11,14 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class NewDiscountModel : PageModel
     {
+        private readonly IAdminService _admin;
+        [BindProperty(SupportsGet = true)]
         public PriceDiscounts Discount { get; set; }
-        private readonly AdminService _admin = new();
+
+        public NewDiscountModel(IAdminService adminService)
+        {
+            _admin = adminService;
+        }
         public IActionResult OnGet(int? id)
         {
             if (id.HasValue)

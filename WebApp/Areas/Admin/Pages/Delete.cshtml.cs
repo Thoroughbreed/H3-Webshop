@@ -11,9 +11,14 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class DeleteModel : PageModel
     {
-        private readonly AdminService _admin = new();
+        private readonly IAdminService _admin;
         [BindProperty]
         public Products Product { get; set; }
+
+        public DeleteModel(IAdminService adminService)
+        {
+            _admin = adminService;
+        }
         public void OnGet(int? id)
         {
             if (id.HasValue)

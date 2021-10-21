@@ -11,9 +11,15 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class NewCatModel : PageModel
     {
+        private readonly IAdminService _admin;
+
         [BindProperty(SupportsGet = true)]
         public Categories Category { get; set; }
-        private readonly AdminService _admin = new();
+
+        public NewCatModel(IAdminService adminService)
+        {
+            _admin = adminService;
+        }
         public IActionResult OnGet(int? id)
         {
             if (id.HasValue)

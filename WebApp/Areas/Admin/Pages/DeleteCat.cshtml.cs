@@ -11,9 +11,14 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class DeleteCatModel : PageModel
     {
-        private readonly AdminService _admin = new();
+        private readonly IAdminService _admin;
         [BindProperty]
         public Categories Category { get; set; }
+
+        public DeleteCatModel(IAdminService adminService)
+        {
+            _admin = adminService;
+        }
         public void OnGet(int? id)
         {
             if (id.HasValue)

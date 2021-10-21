@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DataLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,8 +9,7 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class CustomerInfoModel : PageModel
     {
-        private readonly ShopService _service = new();
-        private readonly AdminService _admin = new();
+        private readonly IAdminService _admin;
 
         [BindProperty(SupportsGet = true)]
         public string Search { get; set; }
@@ -29,6 +26,11 @@ namespace WebApp.Areas.Admin.Pages
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(PageCount, PageSize));
 
         public List<Customers> Customers { get; set; }
+
+        public CustomerInfoModel(IAdminService adminService)
+        {
+            _admin = adminService;
+        }
 
         public void OnGet()
         {

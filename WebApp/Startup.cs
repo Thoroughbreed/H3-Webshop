@@ -21,8 +21,8 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddScoped<ShopService>();
-            services.AddScoped<AdminService>();
+            services.AddScoped<IShopService, ShopService>();
+            services.AddScoped<IAdminService, AdminService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

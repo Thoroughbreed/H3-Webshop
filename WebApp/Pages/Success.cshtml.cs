@@ -9,7 +9,11 @@ namespace WebApp.Pages
 {
     public class SuccessModel : PageModel
     {
-        private readonly ShopService _service = new();
+        private readonly IShopService _service;
+        public SuccessModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
 
         public Customers Customer { get; set; }
         public string GUID { get; set; }

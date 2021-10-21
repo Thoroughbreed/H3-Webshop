@@ -12,8 +12,8 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class EditProductModel : PageModel
     {
-        private readonly ShopService _service = new();
-        private readonly AdminService _admin = new();
+        private readonly IShopService _service;
+        private readonly IAdminService _admin;
         [BindProperty]
         public Products Product { get; set; }
 
@@ -27,6 +27,11 @@ namespace WebApp.Areas.Admin.Pages
         [BindProperty]
         public List<SelectListItem> PriceDiscount { get; set; }
 
+        public EditProductModel(IShopService shopService, IAdminService adminService)
+        {
+            _service = shopService;
+            _admin = adminService;
+        }
 
         public IActionResult OnGet(int? prodID)
         {

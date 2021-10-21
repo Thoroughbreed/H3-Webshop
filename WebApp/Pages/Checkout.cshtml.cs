@@ -10,7 +10,7 @@ namespace WebApp.Pages
 {
     public class CheckoutModel : PageModel
     {
-        private readonly ShopService _service = new();
+        private readonly IShopService _service;
         [BindProperty]
         public List<OrderItems> Cart { get; set; } = new();
         public List<CartOrderItems> cartCookie { get; set; }
@@ -20,7 +20,10 @@ namespace WebApp.Pages
         public Customers Customer { get; set; }
         public string json { get; set; }
 
-
+        public CheckoutModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
 
 
         public void OnGet()

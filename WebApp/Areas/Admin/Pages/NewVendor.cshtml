@@ -2,3 +2,21 @@
 @model WebApp.Areas.Admin.Pages.NewVendorModel
 @{
 }
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <input type="hidden" asp-for="Vendor.VendorID" />
+            <div class="form-group">
+                <label asp-for="Vendor.Name">Producent</label>
+                <input asp-for="Vendor.Name" class="form-control" type="text" size="100%" />
+                <span class="text-danger" asp-validation-for="Vendor.Name"></span>
+            </div>
+            <button type="submit" class="btn btn-outline-danger">Gem ændringer</button>
+            @*<a asp-area="Admin" asp-page="./Dele" asp-route-id="@Model.Category.CategoryID" class="btn btn-danger">Slet kategori</a>*@
+        </form>
+    </div>
+
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

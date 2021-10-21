@@ -11,8 +11,11 @@ namespace WebApp.Pages
 {
     public class CartModel : PageModel
     {
-        private readonly ShopService _service = new();
-
+        private readonly IShopService _service;
+        public CartModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
         public List<OrderItems> Cart { get; set; } = new();
         public List<CartOrderItems> cartCookie { get; set; }
         public List<Products> Products { get; set; } = new();

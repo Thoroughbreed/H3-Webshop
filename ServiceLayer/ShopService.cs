@@ -7,7 +7,7 @@ using System;
 
 namespace ServiceLayer
 {
-    public class ShopService
+    public class ShopService : IShopService
     {
         private readonly CoreContext _context;
 
@@ -211,7 +211,7 @@ namespace ServiceLayer
         }
     }
 
-    public class AdminService
+    public class AdminService : IAdminService
     {
         private readonly CoreContext _context = new CoreContext();
         public IQueryable<Customers> GetCustomersQ(string? searchTerm)

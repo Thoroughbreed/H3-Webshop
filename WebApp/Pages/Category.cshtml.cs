@@ -13,7 +13,7 @@ namespace WebApp.Pages
 {
     public class CategoryModel : PageModel
     {
-        private readonly ShopService _service = new();
+        private readonly IShopService _service;
         [BindProperty(SupportsGet = true)]
         public string Search { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -31,6 +31,11 @@ namespace WebApp.Pages
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(PageCount, PageSize));
 
         public List<Products> Products { get; set; }
+
+        public CategoryModel(IShopService shopService)
+        {
+            _service = shopService;
+        }
         public void OnGet(int catID)
         {
             Category = _service.GetCategoryByIDQ(catID).FirstOrDefault();
