@@ -2,42 +2,97 @@
 @model WebApp.Pages.CheckoutModel
 @{
 }
-<h1>Fuck yeah! Checkout desk!</h1>
+<div class="container col-12 text-center">
+    <h1>Fuck yeah! Checkout desk!</h1>
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-8">
-
+        <div class="col-6">
+            <form method="post">
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Customer.FName">Fornavn</label>
+                        <input asp-for="Customer.FName" class="form-control" type="text" />
+                        <span class="text-danger" asp-validation-for="Customer.FName"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Customer.LName">Efternavn</label>
+                        <input asp-for="Customer.LName" class="form-control" type="text" />
+                        <span class="text-danger" asp-validation-for="Customer.LName"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Customer.RoadName">Vej</label>
+                        <input asp-for="Customer.RoadName" class="form-control" type="text" />
+                        <span class="text-danger" asp-validation-for="Customer.RoadName"></span>
+                    </div>
+                    <div class="form-group col-3">
+                        <label asp-for="Customer.RoadNumber">Nummer</label>
+                        <input asp-for="Customer.RoadNumber" class="form-control" type="text" />
+                        <span class="text-danger" asp-validation-for="Customer.RoadNumber"></span>
+                    </div>
+                    <div class="form-group col-3">
+                        <label asp-for="Customer.PostNumber">Postnummer</label>
+                        <input asp-for="Customer.PostNumber" class="form-control" type="text" />
+                        <span class="text-danger" asp-validation-for="Customer.PostNumber" type="text"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Customer.PhoneMain">Telefon (fastnet)</label>
+                        <input asp-for="Customer.PhoneMain" class="form-control" type="text" />
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Customer.PhoneMobile">Mobiltelefon</label>
+                        <input asp-for="Customer.PhoneMobile" class="form-control" type="text" />
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label asp-for="Customer.EMail">E-Mail</label>
+                        <input asp-for="Customer.EMail" class="form-control" type="email" />
+                        <span asp-validation-for="Customer.EMail"></span>
+                    </div>
+                
+                <button type="submit" class="btn btn-success">Fortsæt</button>
+            </form>
         </div>
-        <div class="col-4">
-            @foreach (var item in Model.Cart)
-            {
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        Vare:
-                    </dt>
-                    <dd class="col-sm-10">
-                        @item.Products.Name
-                    </dd>
-                    <dt class="col-sm-2">
-                        Pris:
-                    </dt>
-                    <dd class="col-sm-10">
-                        @item.Products.Price
-                    </dd>
-                    <dt class="col-sm-2">
-                        Antal:
-                    </dt>
-                    <dd class="col-sm-10">
-                        @item.Amount
-                    </dd>
-                    <dt class="col-sm-2">
-                        Total pris:
-                    </dt>
-                    <dd class="col-sm-10">
-                        @item.LinePrice
-                    </dd>
-                </dl>
-            }
+        <div class="col-6">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Navn</th>
+                        <th scope="col">Stykpris</th>
+                        <th scope="col">Antal</th>
+                        <th scope="col">Pris</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.Cart)
+                {
+                    <tr>
+                        <td>
+                            @Model.Products.Find(p => p.ProductID == item.ProductID).Name
+                        </td>
+                        <td>
+                            @Model.Products.Find(p => p.ProductID == item.ProductID).Price kr
+                        </td>
+                        <td>
+                            @item.Amount
+                        </td>
+                        <td>
+                            @item.LinePrice kr
+                        </td>
+                    </tr>
+                }
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Total: </th>
+                        <th>@Model.Cart.Sum(c => c.LinePrice) kr</th>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 </div>
