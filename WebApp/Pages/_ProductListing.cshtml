@@ -20,10 +20,14 @@
                 Se mere
                 <i class="fas fa-info-circle"></i>
             </a>
-            <a class="btn btn-success" onclick="checkout('@Model.Name')">
+            @*<a class="btn btn-success" onclick="checkout('@Model.Name')">
                 Tilføj til kurv
                 <i class="fas fa-shopping-basket"></i>
-            </a>
+            </a>*@
+        <a class="btn btn-success" asp-page-handler="Cart" asp-page="./Products" asp-route-name="@Model.Name">
+            Tilføj til kurv
+            <i class="fas fa-shopping-basket"></i>
+        </a>
         </div>
     </div>
 </div>

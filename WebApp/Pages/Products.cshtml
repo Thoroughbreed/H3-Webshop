@@ -39,6 +39,6 @@
     @section footer {
         @if (Model.Message != null)
         {
-            <div class="alert alert-info">@Model.Message</div>
+            @:<script>checkout('@Model.Message')</script>
         }
     }

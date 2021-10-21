@@ -13,25 +13,35 @@ namespace WebApp.Pages
     {
         private readonly ShopService _service = new();
 
+        // Ordering and search
         [BindProperty(SupportsGet = true)]
         public string Search { get; set; }
         [BindProperty(SupportsGet = true)]
-        public int CurrPage { get; set; } = 1;
-        [BindProperty(SupportsGet = true)]
         public ProductOrderOptions prodOrderOption { get; set; } = 0;
-        [TempData]
-        public string Message { get; set; }
 
-
+        // Pagination
+        [BindProperty(SupportsGet = true)]
+        public int CurrPage { get; set; } = 1;
         public int PageCount { get; set; }
         public int PageSize { get; set; } = 8;
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(PageCount, PageSize));
 
+        // Model properties
+        [TempData]
+        public string Message { get; set; }
         public List<Products> Products { get; set; }
+
         public void OnGet()
         {
             PageCount = _service.GetProductsQ(Search).Count();
             Products = _service.GetProducts(CurrPage, PageSize, prodOrderOption, Search);
+        }
+
+        public void OnGetCart(string name)
+        {
+            PageCount = _service.GetProductsQ(Search).Count();
+            Products = _service.GetProducts(CurrPage, PageSize, prodOrderOption, Search);
+            TempData["Message"] = name;
         }
     }
 }
