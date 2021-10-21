@@ -19,11 +19,29 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-page="/Index">Products</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navDropView" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Oversigt:
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navDropView">
+                                <a class="dropdown-item" asp-page="./Products">Produkter</a>
+                                <a class="dropdown-item" asp-page="./CustomerInfo">Kunder</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" asp-page="./Categories">Kategorier</a>
+                                <a class="dropdown-item" asp-page="./Discounts">Rabatkoder</a>
+                                <a class="dropdown-item" asp-page="./Vendors">Producenter</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-page="/CustomerInfo">Customers</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Opret ny:
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-page="./EditProduct">Produkt</a>
+                                <a class="dropdown-item" asp-page="./NewCat">Kategori</a>
+                                <a class="dropdown-item" asp-page="./NewVendor">Producent</a>
+                                <a class="dropdown-item" asp-page="./NewDiscount">Rabatkupon</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -39,7 +57,7 @@
     <footer class="border-top footer text-muted">
         @RenderSection("footer", required: false)
         <div class="container">
-            &copy; 2021 - WebApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2021 - Webshop
         </div>
     </footer>
 

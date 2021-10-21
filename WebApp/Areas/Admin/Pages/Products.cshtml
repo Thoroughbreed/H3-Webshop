@@ -1,0 +1,51 @@
+﻿@page
+@model WebApp.Areas.Admin.Pages.ProductsModel
+@using ServiceLayer
+@{
+}
+<form method="get" id="searchForm">
+    <div class="input-group mb-3">
+        <input type="search" asp-for="@Model.Search" class="form-control">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <label asp-for="prodOrderOption">Order product by: </label>
+    <select asp-for="prodOrderOption" asp-items="Html.GetEnumSelectList<ProductOrderOptions>()" class="accordion" onchange="searchForm.submit()"></select>
+</form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Navn</th>
+            <th scope="col">Kategori</th>
+            <th scope="col">Pris</th>
+            <th scope="col">Producent</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach (var prod in Model.Products)
+    {
+        <partial name="_ProductListing" model="prod" />
+    }
+</table>
+<ul class="pagination">
+    @for (int i = 1; i <= Model.TotalPages; i++)
+    {
+        <li class="page-item @(i == Model.CurrPage ? "active" : "")">
+            <a asp-page="./Products" class="page-link" asp-all-route-data="@(new Dictionary<string, string>{
+        { "Search", "" },
+        { "CurrPage", @i.ToString() },
+        { "prodOrderOption", Model.prodOrderOption.ToString() }
+            })">@i</a>
+        </li>
+    }
+</ul>
+<a asp-page="./EditProduct" asp-route-prodID="" class="btn btn-info">Add New</a>
+@section footer {
+    @if (Model.Message != null)
+    {
+        <div class="alert alert-info">@Model.Message</div>
+    }
+}

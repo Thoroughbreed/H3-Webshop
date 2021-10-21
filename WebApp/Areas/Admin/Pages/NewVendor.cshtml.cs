@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DataLayer.Models;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ServiceLayer;
 
-namespace WebApp.Areas.Admin
+namespace WebApp.Areas.Admin.Pages
 {
-    public class IndexModel : PageModel
+    public class NewVendorModel : PageModel
     {
-
         public void OnGet()
         {
         }
