@@ -22,7 +22,13 @@
     </dd>
 </dl>
 <a asp-page="./Products" class="btn btn-info">Alle produkter</a>
-<a class="btn btn-success" onclick="checkout('@Model.Product.Name')">
+<a class="btn btn-success" asp-page-handler="Cart" asp-page="./Detail" asp-route-prodID="@Model.Product.ProductID" asp-route-name="@Model.Product.Name">
     Tilføj til kurv
     <i class="fas fa-shopping-basket"></i>
 </a>
+@section footer {
+    @if (Model.Message != null)
+    {
+        @:<script>checkout('@Model.Message')</script>
+    }
+}

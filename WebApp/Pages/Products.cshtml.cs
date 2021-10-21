@@ -37,11 +37,12 @@ namespace WebApp.Pages
             Products = _service.GetProducts(CurrPage, PageSize, prodOrderOption, Search);
         }
 
-        public void OnGetCart(string name)
+        public IActionResult OnGetCart(string name)
         {
             PageCount = _service.GetProductsQ(Search).Count();
             Products = _service.GetProducts(CurrPage, PageSize, prodOrderOption, Search);
             TempData["Message"] = name;
+            return RedirectToPage("Products");
         }
     }
 }
