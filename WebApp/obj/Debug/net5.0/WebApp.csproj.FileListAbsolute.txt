@@ -814,3 +814,9 @@ C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Page
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\_ProductCatListing.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Checkout.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\Success.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.Razor.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.Helpers.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\System.Web.WebPages.dll
+C:\Users\jaa\source\repos\Webshop\WebApp\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll

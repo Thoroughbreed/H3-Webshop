@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DataLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -68,6 +66,7 @@ namespace WebApp.Pages
                     Order = _service.CheckoutNewCust(Customer, Cart);
                 }
                 Response.Cookies.Delete("cart");
+
                 _service.Commit();
                 return RedirectToPage("./Success", new { guid = Order.OrderGuid, cID = Customer.CustomerID });
             }
