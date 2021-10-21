@@ -23,7 +23,7 @@
     <div class="card-deck">
         @foreach (var prod in Model.Products)
         {
-            <partial name="_ProductListing" model="prod" />
+            <partial name="_ProductCatListing" model="prod" />
         }
     </div>
     @if (Model.PageCount > Model.PageSize)

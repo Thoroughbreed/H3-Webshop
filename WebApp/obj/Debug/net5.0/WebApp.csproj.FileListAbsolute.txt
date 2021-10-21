@@ -811,3 +811,4 @@ C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Page
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\NewVendor.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\NewDiscount.cshtml.g.cs
 C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Areas\Admin\Pages\DeleteCat.cshtml.g.cs
+C:\Users\jaa\source\repos\Webshop\WebApp\obj\Debug\net5.0\Razor\Pages\_ProductCatListing.cshtml.g.cs

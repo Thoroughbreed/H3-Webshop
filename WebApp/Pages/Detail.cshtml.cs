@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using DataLayer.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
@@ -26,10 +28,10 @@ namespace WebApp.Pages
             TempData["Message"] = name;
 
             #region Cart Cookie dims
-
+            string json;
             if (Request.Cookies.ContainsKey("cart"))
             {
-                string json = Request.Cookies["cart"];
+                json = Request.Cookies["cart"];
                 List<CartOrderItems> cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
                 if (cartCookie.FirstOrDefault(c => c.ProductID == prodID) != null)
                 {
@@ -43,7 +45,6 @@ namespace WebApp.Pages
                 }
 
                 json = JsonConvert.SerializeObject(cartCookie);
-                Response.Cookies.Append("cart", json);
             }
             else
             {
@@ -51,13 +52,11 @@ namespace WebApp.Pages
                 CartOrderItems cartItem = new() { ProductID = Product.ProductID, Amount = 1 } ;
                 cartCookie.Add(cartItem);
 
-                string json = JsonConvert.SerializeObject(cartCookie);
+                json = JsonConvert.SerializeObject(cartCookie);
 
-                Response.Cookies.Append("cart", json);
             }
-
+            Response.Cookies.Append("cart", json, new CookieOptions() { IsEssential = true, HttpOnly = true }); // Secure = true for HTTPS
             #endregion
-
 
             return RedirectToPage("Detail", new { prodID = prodID.Value });
         }

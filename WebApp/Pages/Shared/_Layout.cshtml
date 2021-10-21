@@ -8,27 +8,24 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/site.css" />
     <script type="text/javascript">
-        function checkout(test) {
+        function checkout(productName) {
             let timerInterval
             Swal.fire({
                 position: 'top',
                 title: 'Sweet!',
-                html: 'Du har tilføjet <b></b> til kurven.<br><a href="#" class="btn btn-info">Fortsæt med at handle</a> <a href="#" class="btn btn-info">Gå til indkøbskurv</a>',
+                html: 'Du har tilføjet <b></b> til kurven.<br><a href="#" class="btn btn-info">Fortsæt med at handle</a> <a href="cart" class="btn btn-info">Gå til indkøbskurv</a>',
                 timer: 3000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading()
                     const b = Swal.getHtmlContainer().querySelector('b')
-                        b.textContent = test
+                        b.textContent = productName
                 },
                 willClose: () => {
                     clearInterval(timerInterval)
                 }
             }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('I was closed by the timer')
-                }
+                if (result.dismiss === Swal.DismissReason.timer) { }
             })
         }
     </script>

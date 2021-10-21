@@ -1,20 +1,27 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ServiceLayer;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WebApp.ViewComponents
 {
     public class ShoppingCartViewComponent : ViewComponent
     {
-        private readonly ShopService _service;
-        public ShoppingCartViewComponent(ShopService service)
-        {
-            _service = service;
-        }
-
         public IViewComponentResult Invoke()
         {
-            int counter = 3;
-            return View(counter);
+            string json = Request.Cookies["cart"];
+            List<CartOrderItems> cartCookie = new();
+            if (!string.IsNullOrEmpty(json))
+            {
+                cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
+                int counter = cartCookie.Sum(a => a.Amount);
+                return View(counter);
+            }
+            else
+            {
+                return View(0);
+            }
         }
     }
 }

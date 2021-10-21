@@ -2,37 +2,55 @@
 @model WebApp.Pages.CartModel
 @{
 }
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Navn</th>
-            <th scope="col">Antal</th>
-            <th scope="col">Pris</th>
-        </tr>
-    </thead>
-    @foreach (var item in Model.Products)
-    {
-        <tr>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @Model.cartCookie.Find(a => a.ProductID == item.ProductID).Amount
-            </td>
-            <td>
-                @{ var a = @Model.cartCookie.Find(a => a.ProductID == item.ProductID).Amount;
-                    var b = @item.Price;
-                    var result = a * b;
-                } @result
-            </td>
-        </tr>
-    }
-    <tfoot>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-        </tr>
-    </tfoot>
 
-</table>
+@if (string.IsNullOrEmpty(Model.json))
+{
+    <h2>Hovsa!</h2>
+    <p>Din indkøbskurv er desværre tom, skynd dig over til vores lækre <a asp-page="./Products">produktside</a> og køb noget :)</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Navn</th>
+                <th scope="col">Stykpris</th>
+                <th scope="col">Antal</th>
+                <th scope="col">Pris</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.Cart)
+        {
+            <tr>
+                <td>
+                    <a asp-page="./Cart" asp-route-id="@item.ProductID" asp-page-handler="Remove"><i class="fas fa-times"></i></a>
+                    @Model.Products.Find(p => p.ProductID == item.ProductID).Name
+                </td>
+                <td>
+                    @Model.Products.Find(p => p.ProductID == item.ProductID).Price
+                </td>
+                <td>
+                    <a asp-page="./Cart" asp-route-id="@item.ProductID" asp-page-handler="Sub"><i class="fas fa-minus"></i></a>
+                    @item.Amount
+                    <a asp-page="./Cart" asp-route-id="@item.ProductID" asp-page-handler="Add"><i class="fas fa-plus"></i></a>
+                </td>
+                <td>
+                    @item.LinePrice
+                </td>
+            </tr>
+        }
+        <tfoot>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Total pris:</th>
+                <th scope="col">@Model.Cart.Sum(c => c.LinePrice)</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="container">
+        <a class="btn btn-outline-warning" asp-page="./Cart" asp-page-handler="Empty">Tøm kurv</a>
+        <a class="btn btn-success">Gå til kassen</a>
+    </div>
+}

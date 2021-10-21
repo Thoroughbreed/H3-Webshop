@@ -20,11 +20,7 @@
                 Se mere
                 <i class="fas fa-info-circle"></i>
             </a>
-            @*<a class="btn btn-success" onclick="checkout('@Model.Name')">
-                Tilføj til kurv
-                <i class="fas fa-shopping-basket"></i>
-            </a>*@
-        <a class="btn btn-success" asp-page-handler="Cart" asp-page="./Products" asp-route-name="@Model.Name" asp-route-prodID="@Model.ProductID">
+        <a class="btn btn-success" asp-page-handler="Cart" asp-page="./Category" asp-route-name="@Model.Name" asp-route-prodID="@Model.ProductID" asp-route-catID="@Model.CategoryID">
             Tilføj til kurv
             <i class="fas fa-shopping-basket"></i>
         </a>
