@@ -15,10 +15,6 @@ namespace ServiceLayer
         { _context = ct; }
         public ShopService()
         { _context = new CoreContext(); }
-        public void Commit()
-        {
-            _context.SaveChanges();
-        }
 
         #region CLI METHODS - DEPRECATED
         /// <summary>
@@ -90,6 +86,10 @@ namespace ServiceLayer
             _context.Orders.Add(order);
         }
         #endregion
+        public void Commit()
+        {
+            _context.SaveChanges();
+        }
 
         public void AddUser(Customers customer)
         {
@@ -101,7 +101,7 @@ namespace ServiceLayer
             _context.Customers.Update(customer);
         }
 
-        #region IQueryables
+        #region Queryables
         public IQueryable<Products> GetProductsQ(string? searchTerm)
         {
             var q = _context.Products.Include(p => p.Category)
@@ -214,6 +214,8 @@ namespace ServiceLayer
     public class AdminService : IAdminService
     {
         private readonly CoreContext _context = new CoreContext();
+
+        #region Queryables (admin)
         public IQueryable<Customers> GetCustomersQ(string? searchTerm)
         {
             var q = _context.Customers
@@ -243,6 +245,16 @@ namespace ServiceLayer
             return _context.PriceDiscounts.Where(p => p.PriceDiscountID > 0);
         }
 
+        public IQueryable<Orders> GetOrdersQ()
+        {
+            return _context.Orders
+                .Include(o => o.OrderItems)
+                .Include(o => o.Customer)
+                    .ThenInclude(c => c.City)
+                .AsNoTracking();
+        }
+        #endregion
+
         public List<Customers> GetCustomers(int currPage, int pageSize, CustomerOrderOptions options, string search = null)
         {
             return GetCustomersQ(search)
@@ -252,6 +264,26 @@ namespace ServiceLayer
                 .ToList();
         }
 
+        public Products GetProductByID(int id)
+        {
+            return _context.Products
+                .Where(p => p.ProductID == id)
+                .FirstOrDefault();
+        }
+
+        public Orders GetOrdersByGUID(string guid)
+        {
+            return _context.Orders
+                .Where(o => o.OrderGuid.ToString().StartsWith(guid))
+                .Include(o => o.OrderItems)
+                    .ThenInclude(o => o.Products)
+                .Include(o => o.Customer)
+                    .ThenInclude(c => c.City)
+                .AsNoTracking()
+                .FirstOrDefault();
+        }
+
+        #region CRUD (Admin)
         public void Update(object item)
         {
             _context.Update(item);
@@ -271,33 +303,6 @@ namespace ServiceLayer
         {
             _context.SaveChanges();
         }
-
-        public Products GetProductByID(int id)
-        {
-            return _context.Products
-                .Where(p => p.ProductID == id)
-                .FirstOrDefault();
-        }
-
-        public IQueryable<Orders> GetOrdersQ()
-        {
-            return _context.Orders
-                .Include(o => o.OrderItems)
-                .Include(o => o.Customer)
-                    .ThenInclude(c => c.City)
-                .AsNoTracking();
-        }
-
-        public Orders GetOrdersByGUID(string guid)
-        {
-            return _context.Orders
-                .Where(o => o.OrderGuid.ToString().StartsWith(guid))
-                .Include(o => o.OrderItems)
-                    .ThenInclude(o => o.Products)
-                .Include(o => o.Customer)
-                    .ThenInclude(c => c.City)
-                .AsNoTracking()
-                .FirstOrDefault();
-        }
+        #endregion
     }
 }
