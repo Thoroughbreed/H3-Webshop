@@ -80,7 +80,15 @@ Der er tilknyttet nogle enkelte unit-tests der tester de kald der er i servicela
 |Microsoft.EntityFrameworkCore.Tools|5.0.10|
 |Microsoft.Extensions.Logging.Console|5.0.0|
 ---
+### Installation
+- Åbn den i VS og start med at installere ovenstående pakker
+- Opret databasen (og seed-data) vha kommandoen *drop-database* - *update-database*
+- Kør programmet!
+---
 ### Database
 Databasen er en MSSQL Express
+
 #### ER Diagram
 ![ER diagram over databasen](https://github.com/Thoroughbreed/H3-Webshop/blob/master/ER%20Diagram%20WebShop.png?raw=true)
+
+
