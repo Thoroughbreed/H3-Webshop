@@ -21,8 +21,10 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IShopService, ShopService>();
-            services.AddScoped<IAdminService, AdminService>();
+            services.AddSingleton<IShopService, ShopService>();
+            services.AddSingleton<IAdminService, AdminService>();
+
+            services.AddSingleton<IDTOService, DTOService>();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebAPI", Version = "v0.1"}); });
         }
 

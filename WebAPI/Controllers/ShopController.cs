@@ -17,10 +17,13 @@ namespace WebAPI.Controllers
     {
         private readonly IShopService _service;
         private readonly IAdminService _admin;
-        public ShopController(IShopService service, IAdminService admin)
+        private readonly IDTOService _DTOService;
+
+        public ShopController(IShopService service, IAdminService admin, IDTOService dto)
         {
             _service = service;
             _admin = admin;
+            _DTOService = dto;
         }
         // GET: /<controller>/
 
@@ -30,6 +33,26 @@ namespace WebAPI.Controllers
         {
             var q = _service.GetProductsQ(search).ConvertToDTO();
             return q.ToArray();
+        }
+
+        [HttpPut]
+        [Route("Products")]
+        public IActionResult PutProd(ProductDTO product)
+        {
+            var p = _service.GetProductsQ(null).Where(p => p.ProductID == product.ID).ConvertToDTO().FirstOrDefault();
+            if (p == null)
+            {
+                return NoContent();
+            }
+            try
+            {
+                _DTOService.UpdateFromDTO(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return Ok();
         }
 
         [HttpGet]

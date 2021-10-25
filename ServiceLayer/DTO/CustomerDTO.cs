@@ -5,6 +5,8 @@ namespace ServiceLayer.DTO
     {
         public string Name { get; set; }
         public string Address { get; set; }
+        public string City { get; set; }
         public int Orders { get; set; }
+        public int id { get; set; }
     }
 }

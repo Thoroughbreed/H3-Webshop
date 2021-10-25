@@ -2,6 +2,7 @@
 using System.Linq;
 using DataLayer.Models;
 using ServiceLayer.DTO;
+using ServiceLayer;
 
 namespace ServiceLayer
 {
@@ -14,7 +15,8 @@ namespace ServiceLayer
                 Name = product.Name,
                 Vendor = product.Vendor.Name,
                 Category = product.Category.Category,
-                Price = product.Price
+                Price = product.Price,
+                ID = product.ProductID
             };
         }
 
@@ -28,8 +30,10 @@ namespace ServiceLayer
             return new CustomerDTO
             {
                 Name = customer.FName + ' ' + customer.LName,
-                Address = customer.RoadName + ' ' + customer.RoadNumber + '\n' + customer.PostNumber + ' ' + customer.City.Name,
-                Orders = customer.OrderAmount.Value
+                Address = customer.RoadName + '_' + customer.RoadNumber,
+                City = customer.PostNumber + ' ' + customer.City.Name,
+                Orders = customer.OrderAmount.Value,
+                id = customer.CustomerID
             };
         }
 
@@ -43,7 +47,8 @@ namespace ServiceLayer
             return new OrderItemDTO
             {
                 Product = item.Products.ToString(),
-                Amount = item.Amount
+                Amount = item.Amount,
+                id = item.OrderID
             };
         }
 

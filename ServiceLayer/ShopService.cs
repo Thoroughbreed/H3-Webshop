@@ -4,6 +4,7 @@ using System.Linq;
 using DataLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using ServiceLayer.DTO;
 
 namespace ServiceLayer
 {
@@ -211,6 +212,43 @@ namespace ServiceLayer
         }
 
 
+    }
+
+    public class DTOService : IDTOService
+    {
+        private readonly CoreContext _context = new CoreContext();
+
+        public void UpdateFromDTO(ProductDTO product)
+        {
+            var p = _context.Products.Where(p => p.ProductID == product.ID).FirstOrDefault();
+            p.Name = product.Name;
+            p.Price = product.Price;
+            p.CategoryID = _context.Categories.Where(c => c.Category == product.Category).FirstOrDefault().CategoryID;
+            p.VendorID = _context.Vendors.Where(v => v.Name == product.Vendor).FirstOrDefault().VendorID;
+
+            _context.Update(p);
+            _context.SaveChanges();
+        }
+
+        public void UpdateFromDTO(CustomerDTO customer)
+        {
+            var c = _context.Customers.Where(c => c.CustomerID == customer.id).FirstOrDefault();
+
+            string[] name = customer.Name.Split(' ');
+            c.FName = name[0];
+            c.LName = name[1];
+
+            string[] adr = customer.Address.Split('_');
+            c.RoadName = adr[0];
+            c.RoadNumber = adr[1];
+
+            c.PostNumber = Convert.ToInt16(customer.City.Split(' ')[0]);
+
+            _context.Update(c);
+            _context.SaveChanges();
+        }
+
+        
     }
 
     public class AdminService : IAdminService
