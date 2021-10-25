@@ -14,7 +14,11 @@
     },
     "frameworks": {
       "netcoreapp5.0": {
-        "projectReferences": {}
+        "projectReferences": {
+          "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
+            "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj"
+          }
+        }
       }
     },
     "warningProperties": {
@@ -28,7 +32,7 @@
       "dependencies": {
         "Swashbuckle.AspNetCore": {
           "target": "Package",
-          "version": "[5.6.3, )"
+          "version": "[6.2.3, )"
         }
       },
       "imports": [

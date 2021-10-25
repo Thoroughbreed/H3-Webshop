@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jXjCH0HFeygDG1eG4R20Vxa10nAMkjZ5IX2R9aLEA7f2yDl3lVkm6qQs5moFokt4XWqVlzeyvzBi58TYpQajnQ==",
+  "dgSpecHash": "+zHL3yfEJ4Z8f0QPot3mDQDuUTEHHExlC4NBAe918v4I9+6j6uznscLy6W+NCM/ISlkoQVZuQmv/VV31CtGhSQ==",
   "success": true,
   "projectFilePath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/Webshop/WebshopCLI.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "/Users/janandreasen/.nuget/packages/microsoft.entityframeworkcore.analyzers/5.0.11/microsoft.entityframeworkcore.analyzers.5.0.11.nupkg.sha512",
     "/Users/janandreasen/.nuget/packages/microsoft.entityframeworkcore.design/5.0.11/microsoft.entityframeworkcore.design.5.0.11.nupkg.sha512",
     "/Users/janandreasen/.nuget/packages/microsoft.entityframeworkcore.relational/5.0.11/microsoft.entityframeworkcore.relational.5.0.11.nupkg.sha512",
-    "/Users/janandreasen/.nuget/packages/microsoft.entityframeworkcore.sqlserver/5.0.10/microsoft.entityframeworkcore.sqlserver.5.0.10.nupkg.sha512",
+    "/Users/janandreasen/.nuget/packages/microsoft.entityframeworkcore.sqlserver/5.0.11/microsoft.entityframeworkcore.sqlserver.5.0.11.nupkg.sha512",
     "/Users/janandreasen/.nuget/packages/microsoft.extensions.caching.abstractions/5.0.0/microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "/Users/janandreasen/.nuget/packages/microsoft.extensions.caching.memory/5.0.0/microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "/Users/janandreasen/.nuget/packages/microsoft.extensions.configuration/5.0.0/microsoft.extensions.configuration.5.0.0.nupkg.sha512",

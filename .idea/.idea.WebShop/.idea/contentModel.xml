@@ -53,7 +53,15 @@
       <e p="ServiceLayer" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="CartOrderItems.cs" t="Include" />
+        <e p="DTO" t="Include">
+          <e p="CustomerDTO.cs" t="Include" />
+          <e p="OrderDTO.cs" t="Include" />
+          <e p="OrderItemDTO.cs" t="Include" />
+          <e p="ProductDTO.cs" t="Include" />
+        </e>
+        <e p="DTOMapHelper.cs" t="Include" />
         <e p="IAdminService.cs" t="Include" />
+        <e p="IDTOService.cs" t="Include" />
         <e p="IShopService.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -83,7 +91,7 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="ShopController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -96,8 +104,8 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="Shop.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
-        <e p="WeatherForecast.cs" t="Include" />
         <e p="WebAPI.csproj" t="IncludeRecursive" />
       </e>
       <e p="WebApp" t="IncludeRecursive">

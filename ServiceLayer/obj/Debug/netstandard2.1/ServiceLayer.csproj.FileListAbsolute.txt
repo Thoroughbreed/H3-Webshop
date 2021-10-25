@@ -27,7 +27,6 @@ C:/Users/jaa/source/repos/Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceL
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/bin/Debug/netstandard2.1/ServiceLayer.pdb
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/bin/Debug/netstandard2.1/DataLayer.dll
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/bin/Debug/netstandard2.1/DataLayer.pdb
-/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.csproj.AssemblyReference.cache
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.AssemblyInfoInputs.cache
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.AssemblyInfo.cs
@@ -35,3 +34,4 @@ C:/Users/jaa/source/repos/Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceL
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.csproj.CopyComplete
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.dll
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.pdb
+/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/Debug/netstandard2.1/ServiceLayer.csprojAssemblyReference.cache
