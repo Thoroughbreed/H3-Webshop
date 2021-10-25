@@ -25,17 +25,26 @@ namespace WebAPI.Controllers
         // GET: /<controller>/
 
         [HttpGet]
-        public IEnumerable<ProductDTO> Get(string? search)
+        [Route("Products")]
+        public IEnumerable<ProductDTO> GetProd(string? search)
         {
             var q = _service.GetProductsQ(search).ConvertToDTO();
             return q.ToArray();
         }
 
         [HttpGet]
-        [Route("GetCust")]
+        [Route("Customers")]
         public IEnumerable<CustomerDTO> GetCust(string? search)
         {
             var q = _admin.GetCustomersQ(search).ConvertToDTO();
+            return q.ToArray();
+        }
+
+        [HttpGet]
+        [Route("Orders")]
+        public IEnumerable<OrderDTO> GetOrd()
+        {
+            var q = _admin.GetOrdersQ().ConvertToDTO();
             return q.ToArray();
         }
     }

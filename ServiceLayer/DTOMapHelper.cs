@@ -37,5 +37,29 @@ namespace ServiceLayer
         {
             return customer.Select(c => c.ToDto());
         }
+
+        public static OrderItemDTO ToDTO(this OrderItems item)
+        {
+            return new OrderItemDTO
+            {
+                Product = item.Products.ToString(),
+                Amount = item.Amount
+            };
+        }
+
+        public static OrderDTO ToDto(this Orders order)
+        {
+            return new OrderDTO
+            {
+                OrderID = order.OrderGuid.ToString().Substring(0, 8),
+                Customer = order.Customer.ToDto(),
+                Items = order.OrderItems.Select(o => o.ToDTO()).ToList()
+            };
+        }
+
+        public static IQueryable<OrderDTO> ConvertToDTO(this IQueryable<Orders> order)
+        {
+            return order.Select(o => o.ToDto());
+        }
     }
 }
