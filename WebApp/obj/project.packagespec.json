@@ -1,0 +1,73 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj",
+    "projectName": "WebApp",
+    "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj",
+    "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/obj/",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp5.0"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp5.0": {
+        "projectReferences": {
+          "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
+            "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp5.0": {
+      "dependencies": {
+        "Microsoft.AspNet.WebPages": {
+          "target": "Package",
+          "version": "[3.2.7, )"
+        },
+        "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+          "target": "Package",
+          "version": "[5.0.10, )"
+        },
+        "Microsoft.EntityFrameworkCore.Design": {
+          "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[5.0.11, )"
+        },
+        "microsoft.visualstudio.web.browserlink": {
+          "target": "Package",
+          "version": "[2.2.0, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "frameworkReferences": {
+        "Microsoft.AspNetCore.App": {
+          "privateAssets": "none"
+        },
+        "Microsoft.NETCore.App": {
+          "privateAssets": "all"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+    }
+  }
+}
