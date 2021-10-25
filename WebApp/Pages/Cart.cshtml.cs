@@ -16,19 +16,19 @@ namespace WebApp.Pages
         {
             _service = shopService;
         }
-        public List<OrderItems> Cart { get; set; } = new();
-        public List<CartOrderItems> cartCookie { get; set; }
-        public List<Products> Products { get; set; } = new();
+        public List<OrderItems> Cart { get; } = new List<OrderItems>();
+        private List<CartOrderItems> CartCookie { get; set; }
+        public List<Products> Products { get; } = new List<Products>();
         public Orders Order { get; set; }
         public Customers Customer { get; set; }
-        public string json { get; set; }
+        public string json { get; private set; }
         public void OnGet()
         {
             json = Request.Cookies["cart"];
             if (!string.IsNullOrWhiteSpace(json))
             {
-                cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
-                foreach (var item in cartCookie)
+                CartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
+                foreach (var item in CartCookie)
                 {
                     var prod = _service.GetProductByIDQ(item.ProductID).FirstOrDefault();
                     Products.Add(prod);
@@ -40,14 +40,14 @@ namespace WebApp.Pages
         public IActionResult OnGetRemove(int id)
         {
             json = Request.Cookies["cart"];
-            cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
-            if (cartCookie.FirstOrDefault(c => c.ProductID == id) != null)
+            CartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
+            if (CartCookie.FirstOrDefault(c => c.ProductID == id) != null)
             {
-                var temp = cartCookie.FirstOrDefault(c => c.ProductID == id);
-                cartCookie.Remove(temp);
+                var temp = CartCookie.FirstOrDefault(c => c.ProductID == id);
+                CartCookie.Remove(temp);
             }
 
-            json = JsonConvert.SerializeObject(cartCookie);
+            json = JsonConvert.SerializeObject(CartCookie);
             Response.Cookies.Append("cart", json, new CookieOptions() { IsEssential = true, HttpOnly = true }); // Secure = true for HTTPS
 
             return RedirectToPage("Cart");
@@ -56,14 +56,14 @@ namespace WebApp.Pages
         public IActionResult OnGetAdd(int id)
         {
             json = Request.Cookies["cart"];
-            cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
-            if (cartCookie.FirstOrDefault(c => c.ProductID == id) != null)
+            CartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
+            if (CartCookie.FirstOrDefault(c => c.ProductID == id) != null)
             {
-                CartOrderItems cartItem = cartCookie.First(c => c.ProductID == id);
+                CartOrderItems cartItem = CartCookie.First(c => c.ProductID == id);
                 cartItem.Amount++;
             }
 
-            json = JsonConvert.SerializeObject(cartCookie);
+            json = JsonConvert.SerializeObject(CartCookie);
             Response.Cookies.Append("cart", json, new CookieOptions() { IsEssential = true, HttpOnly = true }); // Secure = true for HTTPS
 
             return RedirectToPage("Cart");
@@ -72,19 +72,19 @@ namespace WebApp.Pages
         public IActionResult OnGetSub(int id)
         {
             json = Request.Cookies["cart"];
-            cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
-            if (cartCookie.FirstOrDefault(c => c.ProductID == id) != null)
+            CartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);
+            if (CartCookie.FirstOrDefault(c => c.ProductID == id) != null)
             {
-                CartOrderItems cartItem = cartCookie.First(c => c.ProductID == id);
+                CartOrderItems cartItem = CartCookie.First(c => c.ProductID == id);
                 if (cartItem.Amount == 1)
                 {
-                    var temp = cartCookie.FirstOrDefault(c => c.ProductID == id);
-                    cartCookie.Remove(temp);
+                    var temp = CartCookie.FirstOrDefault(c => c.ProductID == id);
+                    CartCookie.Remove(temp);
                 }
                 cartItem.Amount--;
             }
 
-            json = JsonConvert.SerializeObject(cartCookie);
+            json = JsonConvert.SerializeObject(CartCookie);
             Response.Cookies.Append("cart", json, new CookieOptions() { IsEssential = true, HttpOnly = true }); // Secure = true for HTTPS
 
             return RedirectToPage("Cart");

@@ -11,8 +11,14 @@ namespace WebApp.Areas.Admin.Pages
 {
     public class ProductsModel : PageModel
     {
-        private readonly ShopService _service = new();
-        private readonly AdminService _admin = new();
+        private readonly IShopService _service;
+        private readonly IAdminService _admin;
+
+        public ProductsModel(IShopService service, IAdminService admin)
+        {
+            _service = service;
+            _admin = admin;
+        }
 
         [BindProperty(SupportsGet = true)]
         public string Search { get; set; }

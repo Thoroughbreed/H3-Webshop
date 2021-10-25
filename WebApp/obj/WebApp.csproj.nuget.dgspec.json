@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj": {}
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj": {
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\obj\\",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,40 +68,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj": {
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj",
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
         "projectName": "ServiceLayer",
-        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj",
-        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\obj\\",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\DataLayer\\DataLayer.csproj"
+              "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj": {
+                "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj"
               }
             }
           }
@@ -136,40 +124,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj": {
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\WebApp.csproj",
-        "packagesPath": "C:\\Users\\jaa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\WebApp\\obj\\",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/WebApp.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netcoreapp5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "net5.0",
+            "targetAlias": "netcoreapp5.0",
             "projectReferences": {
-              "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj": {
-                "projectPath": "C:\\Users\\jaa\\source\\repos\\Webshop\\ServiceLayer\\ServiceLayer.csproj"
+              "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
+                "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj"
               }
             }
           }
@@ -182,7 +164,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "net5.0",
+          "targetAlias": "netcoreapp5.0",
           "dependencies": {
             "Microsoft.AspNet.WebPages": {
               "target": "Package",
@@ -190,7 +172,7 @@
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
-              "version": "[5.0.10, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -221,7 +203,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

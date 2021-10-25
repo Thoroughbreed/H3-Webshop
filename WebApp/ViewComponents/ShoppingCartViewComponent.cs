@@ -11,7 +11,7 @@ namespace WebApp.ViewComponents
         public IViewComponentResult Invoke()
         {
             string json = Request.Cookies["cart"];
-            List<CartOrderItems> cartCookie = new();
+            List<CartOrderItems> cartCookie = new List<CartOrderItems>();
             if (!string.IsNullOrEmpty(json))
             {
                 cartCookie = JsonConvert.DeserializeObject<List<CartOrderItems>>(json);

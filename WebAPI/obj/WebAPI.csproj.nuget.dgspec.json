@@ -1,0 +1,197 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebAPI/WebAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj",
+        "projectName": "DataLayer",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "microsoft.entityframeworkcore.tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
+            "microsoft.extensions.logging.console": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
+        "projectName": "ServiceLayer",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj": {
+                "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebAPI/WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebAPI/WebAPI.csproj",
+        "projectName": "WebAPI",
+        "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebAPI/WebAPI.csproj",
+        "packagesPath": "/Users/janandreasen/.nuget/packages/",
+        "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/janandreasen/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj": {
+                "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

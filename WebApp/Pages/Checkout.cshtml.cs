@@ -12,9 +12,9 @@ namespace WebApp.Pages
     {
         private readonly IShopService _service;
         [BindProperty]
-        public List<OrderItems> Cart { get; set; } = new();
+        public List<OrderItems> Cart { get; set; } = new List<OrderItems>();
         public List<CartOrderItems> cartCookie { get; set; }
-        public List<Products> Products { get; set; } = new();
+        public List<Products> Products { get; set; } = new List<Products>();
         public Orders Order { get; set; }
         [BindProperty]
         public Customers Customer { get; set; }

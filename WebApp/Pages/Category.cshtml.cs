@@ -32,9 +32,10 @@ namespace WebApp.Pages
 
         public List<Products> Products { get; set; }
 
-        public CategoryModel(IShopService shopService)
+        public CategoryModel(IShopService shopService, string search)
         {
             _service = shopService;
+            Search = search;
         }
         public void OnGet(int catID)
         {
@@ -62,7 +63,7 @@ namespace WebApp.Pages
                 }
                 else
                 {
-                    CartOrderItems newCartItem = new() { ProductID = Products.Find(p => p.ProductID == prodID).ProductID, Amount = 1 };
+                    CartOrderItems newCartItem = new CartOrderItems { ProductID = Products.Find(p => p.ProductID == prodID).ProductID, Amount = 1 };
                     cartCookie.Add(newCartItem);
                 }
 
@@ -70,8 +71,8 @@ namespace WebApp.Pages
             }
             else
             {
-                List<CartOrderItems> cartCookie = new();
-                CartOrderItems cartItem = new() { ProductID = Products.Find(p => p.ProductID == prodID).ProductID, Amount = 1 };
+                List<CartOrderItems> cartCookie = new List<CartOrderItems>();
+                CartOrderItems cartItem = new CartOrderItems { ProductID = Products.Find(p => p.ProductID == prodID).ProductID, Amount = 1 };
                 cartCookie.Add(cartItem);
 
                 json = JsonConvert.SerializeObject(cartCookie);
