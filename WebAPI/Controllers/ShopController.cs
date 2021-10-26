@@ -25,14 +25,18 @@ namespace WebAPI.Controllers
             _admin = admin;
             _DTOService = dto;
         }
-        // GET: /<controller>/
 
+        //Products
         [HttpGet]
         [Route("Products")]
-        public IEnumerable<ProductDTO> GetProd(string? search)
+        public IActionResult GetProd(string? search)
         {
             var q = _service.GetProductsQ(search).ConvertToDTO();
-            return q.ToArray();
+            if (q.Count() < 1)
+            {
+                return NoContent();
+            }
+            return Ok(q.ToArray());
         }
 
         [HttpPut]
@@ -42,7 +46,7 @@ namespace WebAPI.Controllers
             var p = _service.GetProductsQ(null).Where(p => p.ProductID == product.ID).ConvertToDTO().FirstOrDefault();
             if (p == null)
             {
-                return NoContent();
+                return NotFound();
             }
             try
             {
@@ -55,20 +59,89 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
-        [HttpGet]
-        [Route("Customers")]
-        public IEnumerable<CustomerDTO> GetCust(string? search)
+        [HttpPost]
+        [Route("Products")]
+        public IActionResult PostProd(ProductDTO product)
         {
-            var q = _admin.GetCustomersQ(search).ConvertToDTO();
-            return q.ToArray();
+            try
+            {
+                _DTOService.AddFromDTO(product);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return Ok(product);
         }
 
+        // Customers
+        [HttpGet]
+        [Route("Customers")]
+        public IActionResult GetCust(string? search)
+        {
+            var q = _admin.GetCustomersQ(search).ConvertToDTO();
+            if (q.Count() < 1)
+            {
+                return NoContent();
+            }
+            return Ok(q.ToArray());
+        }
+
+        [HttpPut]
+        [Route("Customers")]
+        public IActionResult PutCust(CustomerDTO customer)
+        {
+            var c = _service.GetCustByID(customer.id);
+            if (c == null)
+            {
+                return NotFound();
+            }
+            try
+            {
+                _DTOService.UpdateFromDTO(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("Customers")]
+        public IActionResult PostCust(CustomerDTO customer)
+        {
+            try
+            {
+                _DTOService.AddFromDTO(customer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return Ok(customer);
+        }
+
+        // Orders
         [HttpGet]
         [Route("Orders")]
-        public IEnumerable<OrderDTO> GetOrd()
+        public IActionResult GetOrd(string? guid)
         {
-            var q = _admin.GetOrdersQ().ConvertToDTO();
-            return q.ToArray();
+            if (string.IsNullOrWhiteSpace(guid))
+            {
+                var q = _admin.GetOrdersQ().ConvertToDTO();
+                if (q.Count() < 1)
+                {
+                    return NoContent();
+                }
+                return Ok(q.ToArray());
+            }
+            var o = _admin.GetOrdersByGUID(guid);
+            if (o == null)
+            {
+                return NoContent();
+            }
+            return Ok(o.ToDto());
         }
     }
 }

@@ -10,10 +10,15 @@ namespace ServiceLayer
     {
         public static ProductDTO ToDto(this Products product)
         {
+            string vnd = "";
+            if (product.Vendor != null)
+            {
+                vnd = product.Vendor.Name;
+            }
             return new ProductDTO
             {
                 Name = product.Name,
-                Vendor = product.Vendor.Name,
+                Vendor = vnd,
                 Category = product.Category.Category,
                 Price = product.Price,
                 ID = product.ProductID
@@ -30,10 +35,11 @@ namespace ServiceLayer
             return new CustomerDTO
             {
                 Name = customer.FName + ' ' + customer.LName,
-                Address = customer.RoadName + '_' + customer.RoadNumber,
-                City = customer.PostNumber + ' ' + customer.City.Name,
+                Address = customer.RoadName + ' ' + customer.RoadNumber,
+                City = customer.PostNumber.ToString() + ' ' + customer.City.Name,
                 Orders = customer.OrderAmount.Value,
-                id = customer.CustomerID
+                id = customer.CustomerID,
+                EMail = customer.EMail
             };
         }
 

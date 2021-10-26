@@ -6,5 +6,7 @@ namespace ServiceLayer
     {
         public void UpdateFromDTO(ProductDTO product);
         public void UpdateFromDTO(CustomerDTO customer);
+
+        public void AddFromDTO(object o);
     }
 }

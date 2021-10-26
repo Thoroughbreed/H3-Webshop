@@ -143,7 +143,6 @@ namespace DataLayer.Migrations
                         .HasDefaultValueSql("0");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneMain")

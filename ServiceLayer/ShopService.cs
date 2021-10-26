@@ -230,6 +230,75 @@ namespace ServiceLayer
             _context.SaveChanges();
         }
 
+        public void AddFromDTO(Object o)
+        {
+            object item = null;
+            if (o.GetType() == typeof(ProductDTO))
+            {
+                ProductDTO product = (ProductDTO)o;
+                int? vndr = null;
+                if (!string.IsNullOrWhiteSpace(product.Vendor))
+                {
+                    Vendors vend = _context.Vendors.Where(v => v.Name == product.Vendor).FirstOrDefault();
+                    if (vend == null)
+                    {
+                        vend = new Vendors { Name = product.Vendor };
+                        _context.Add(vend);
+                    }
+                    vndr = vend.VendorID;
+                }
+
+                Categories cat = _context.Categories.Where(c => c.Category == product.Category).FirstOrDefault();
+                if (cat == null)
+                {
+                    cat = new Categories { Category = product.Category };
+                    _context.Add(cat);
+                }
+                _context.SaveChanges();
+
+                item = new Products
+                {
+                    Name = product.Name,
+                    Price = product.Price,
+                    CategoryID = cat.CategoryID,
+                    SKU = new Guid().ToString().Substring(0, 8)
+                };
+
+                if (vndr != null)
+                {
+                    ((Products)item).VendorID = vndr.Value;
+                }
+            }
+
+            if (o.GetType() == typeof(CustomerDTO))
+            {
+                CustomerDTO customer = (CustomerDTO)o;
+                string[] name = customer.Name.Split(' ');
+                string[] adr = customer.Address.Split(' ');
+                string RoadName = adr[0];
+                for (int i = 1; i < adr.Length - 1; i++)
+                {
+                    RoadName += ' ' + adr[i];
+                }
+
+                item = new Customers
+                {
+                    FName = name[0],
+                    LName = name[1],
+                    RoadName = RoadName,
+                    RoadNumber = adr[adr.Length - 1],
+                    PostNumber = Convert.ToInt16(customer.City.Split(' ')[0]),
+                    EMail = customer.EMail
+                };
+            }
+
+            if (item != null)
+            {
+                _context.Add(item);
+                _context.SaveChanges();
+            }
+        }
+
         public void UpdateFromDTO(CustomerDTO customer)
         {
             var c = _context.Customers.Where(c => c.CustomerID == customer.id).FirstOrDefault();
@@ -238,11 +307,16 @@ namespace ServiceLayer
             c.FName = name[0];
             c.LName = name[1];
 
-            string[] adr = customer.Address.Split('_');
+            string[] adr = customer.Address.Split(' ');
             c.RoadName = adr[0];
-            c.RoadNumber = adr[1];
+            for (int i = 1; i < adr.Length-1; i++)
+            {
+                c.RoadName += ' ' + adr[i];
+            }
+            c.RoadNumber = adr[adr.Length-1];
 
             c.PostNumber = Convert.ToInt16(customer.City.Split(' ')[0]);
+            c.EMail = customer.EMail;
 
             _context.Update(c);
             _context.SaveChanges();
@@ -314,7 +388,7 @@ namespace ServiceLayer
         public Orders GetOrdersByGUID(string guid)
         {
             return _context.Orders
-                .Where(o => o.OrderGuid.ToString().StartsWith(guid))
+                .Where(o => o.OrderGuid.ToString().Substring(0,8) == guid)
                 .Include(o => o.OrderItems)
                     .ThenInclude(o => o.Products)
                 .Include(o => o.Customer)

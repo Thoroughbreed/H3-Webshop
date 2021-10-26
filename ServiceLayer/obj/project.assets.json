@@ -7483,32 +7483,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/janandreasen/.nuget/packages/": {}
+    "C:\\Users\\jan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
+      "projectUniqueName": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj",
       "projectName": "ServiceLayer",
-      "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/ServiceLayer.csproj",
-      "packagesPath": "/Users/janandreasen/.nuget/packages/",
-      "outputPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/ServiceLayer/obj/",
+      "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\ServiceLayer.csproj",
+      "packagesPath": "C:\\Users\\jan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\ServiceLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/janandreasen/.config/NuGet/NuGet.Config"
+        "C:\\Users\\jan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj": {
-              "projectPath": "/Users/janandreasen/RiderProjects/Webshop/H3-Webshop/DataLayer/DataLayer.csproj"
+            "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\jan\\source\\repos\\WebshopCLI\\DataLayer\\DataLayer.csproj"
             }
           }
         }
@@ -7537,7 +7539,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }

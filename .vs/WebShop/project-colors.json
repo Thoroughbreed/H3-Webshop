@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "2b206185-27a3-4be4-b958-977ebcacc1d0": {
+      "ProjectGuid": "2b206185-27a3-4be4-b958-977ebcacc1d0",
+      "DisplayName": "DataLayer",
+      "ColorIndex": 0
+    },
+    "2b5bc33c-54d6-4ef4-85f8-8d21b84937a2": {
+      "ProjectGuid": "2b5bc33c-54d6-4ef4-85f8-8d21b84937a2",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 1
+    },
+    "115ce167-3c0e-4503-94c1-2f213de92406": {
+      "ProjectGuid": "115ce167-3c0e-4503-94c1-2f213de92406",
+      "DisplayName": "ServiceLayer",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
