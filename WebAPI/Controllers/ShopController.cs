@@ -61,7 +61,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Products")]
-        public IActionResult PostProd(ProductDTO product)
+        public IActionResult PostProd(ProductDTO[] product)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace WebAPI.Controllers
 
         [HttpPost]
         [Route("Customers")]
-        public IActionResult PostCust(CustomerDTO customer)
+        public IActionResult PostCust(CustomerDTO[] customer)
         {
             try
             {
@@ -142,6 +142,22 @@ namespace WebAPI.Controllers
                 return NoContent();
             }
             return Ok(o.ToDto());
+        }
+
+        [HttpPost]
+        [Route("Orders")]
+        public IActionResult PostOrd(OrderItemDTO[] order)
+        {
+            Orders o;
+            try
+            {
+                o = (Orders)_DTOService.AddFromDTO(order);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+            return StatusCode(201, o.OrderGuid.ToString().Substring(0,8));
         }
     }
 }

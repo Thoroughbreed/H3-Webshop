@@ -52,9 +52,10 @@ namespace ServiceLayer
         {
             return new OrderItemDTO
             {
-                Product = item.Products.ToString(),
+                Product = item.ProductID,
                 Amount = item.Amount,
-                id = item.OrderID
+                id = item.OrderID,
+                LinePrice = item.LinePrice
             };
         }
 

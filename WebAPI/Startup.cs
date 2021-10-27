@@ -23,6 +23,8 @@ namespace WebAPI
             services.AddControllers().AddXmlSerializerFormatters();
             services.AddSingleton<IShopService, ShopService>();
             services.AddSingleton<IAdminService, AdminService>();
+            services.AddCors();
+            
 
             services.AddSingleton<IDTOService, DTOService>();
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebAPI", Version = "v0.1"}); });
@@ -37,6 +39,12 @@ namespace WebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v0.1"));
             }
+            app.UseCors(o =>
+            {
+                o.AllowAnyMethod();
+                o.AllowAnyHeader();
+                o.AllowAnyOrigin();
+            });
 
             app.UseHttpsRedirection();
 
