@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "115ce167-3c0e-4503-94c1-2f213de92406": {
+      "ProjectGuid": "115ce167-3c0e-4503-94c1-2f213de92406",
+      "DisplayName": "ServiceLayer",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
