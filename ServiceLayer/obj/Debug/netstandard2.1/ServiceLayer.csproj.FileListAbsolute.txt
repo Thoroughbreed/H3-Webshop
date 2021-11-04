@@ -33,6 +33,5 @@ C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Debug\netstandard2.1\Servi
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Debug\netstandard2.1\ServiceLayer.pdb
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Debug\netstandard2.1\DataLayer.dll
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Debug\netstandard2.1\DataLayer.pdb
-C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.CopyComplete
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.csproj.AssemblyReference.cache
 C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Debug\netstandard2.1\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig

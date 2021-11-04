@@ -5,7 +5,17 @@
       "ProjectGuid": "115ce167-3c0e-4503-94c1-2f213de92406",
       "DisplayName": "ServiceLayer",
       "ColorIndex": 0
+    },
+    "2b5bc33c-54d6-4ef4-85f8-8d21b84937a2": {
+      "ProjectGuid": "2b5bc33c-54d6-4ef4-85f8-8d21b84937a2",
+      "DisplayName": "WebAPI",
+      "ColorIndex": 1
+    },
+    "9cdde321-73b8-46c0-b101-a19a28858a2c": {
+      "ProjectGuid": "9cdde321-73b8-46c0-b101-a19a28858a2c",
+      "DisplayName": "WebApp",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }

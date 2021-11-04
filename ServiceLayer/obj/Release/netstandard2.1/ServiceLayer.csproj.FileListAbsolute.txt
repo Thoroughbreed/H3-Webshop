@@ -1,0 +1,13 @@
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Release\netstandard2.1\ServiceLayer.deps.json
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Release\netstandard2.1\ServiceLayer.dll
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Release\netstandard2.1\ServiceLayer.pdb
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Release\netstandard2.1\DataLayer.dll
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\bin\Release\netstandard2.1\DataLayer.pdb
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.csproj.AssemblyReference.cache
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.AssemblyInfo.cs
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.csproj.CopyComplete
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.dll
+C:\Users\jan\source\repos\WebshopCLI\ServiceLayer\obj\Release\netstandard2.1\ServiceLayer.pdb

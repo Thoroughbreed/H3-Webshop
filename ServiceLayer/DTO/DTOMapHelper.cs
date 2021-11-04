@@ -3,6 +3,8 @@ using System.Linq;
 using DataLayer.Models;
 using ServiceLayer.DTO;
 using ServiceLayer;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ServiceLayer
 {
@@ -21,7 +23,9 @@ namespace ServiceLayer
                 Vendor = vnd,
                 Category = product.Category.Category,
                 Price = product.Price,
-                ID = product.ProductID
+                ID = product.ProductID,
+                Picture = null,
+                SKU = product.SKU
             };
         }
 

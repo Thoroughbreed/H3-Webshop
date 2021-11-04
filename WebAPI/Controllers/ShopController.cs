@@ -31,10 +31,23 @@ namespace WebAPI.Controllers
         [Route("Products")]
         public IActionResult GetProd(string? search)
         {
-            var q = _service.GetProductsQ(search).ConvertToDTO();
+            int _ = 0;
+            IQueryable<ProductDTO> q;
+            if (int.TryParse(search, out _))
+            {
+                q = _service.GetProductByIDQ(_).ConvertToDTO();
+            }
+            else
+            {
+                q = _service.GetProductsQ(search).ConvertToDTO();
+            }
             if (q.Count() < 1)
             {
                 return NoContent();
+            }
+            if (_ > 0)
+            {
+                return Ok(q.FirstOrDefault());
             }
             return Ok(q.ToArray());
         }
@@ -157,7 +170,7 @@ namespace WebAPI.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
-            return StatusCode(201, o.OrderGuid.ToString().Substring(0,8));
+            return StatusCode(201, o.OrderGuid.ToString().Substring(0, 8));
         }
     }
 }

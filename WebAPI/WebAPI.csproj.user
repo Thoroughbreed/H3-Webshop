@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Kestrel</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\jan\source\repos\WebshopCLI\WebAPI\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

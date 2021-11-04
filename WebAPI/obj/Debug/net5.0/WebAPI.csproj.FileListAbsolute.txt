@@ -119,7 +119,7 @@ C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.MvcApplicati
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\scopedcss\bundle\WebAPI.styles.css
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\staticwebassets\WebAPI.StaticWebAssets.Manifest.cache
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.RazorTargetAssemblyInfo.cache
-C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CopyComplete
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.dll
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\ref\WebAPI.dll
 C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.genruntimeconfig.cache
+C:\Users\jan\source\repos\WebshopCLI\WebAPI\obj\Debug\net5.0\WebAPI.csproj.CopyComplete
