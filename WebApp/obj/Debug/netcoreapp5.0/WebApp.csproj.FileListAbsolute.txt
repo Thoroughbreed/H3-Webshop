@@ -427,7 +427,6 @@
 /Users/janandreasen/RiderProjects/Webshop/H3-Webshop/WebApp/obj/Debug/netcoreapp5.0/WebApp.genruntimeconfig.cache
 C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\appsettings.Development.json
 C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\appsettings.json
-C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\WebApp.StaticWebAssets.xml
 C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\WebApp.exe
 C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\WebApp.deps.json
 C:\Users\jan\source\repos\WebshopCLI\WebApp\bin\Debug\netcoreapp5.0\WebApp.runtimeconfig.json
@@ -853,3 +852,4 @@ C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\netcoreapp5.0\WebApp.dll
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\netcoreapp5.0\ref\WebApp.dll
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\netcoreapp5.0\WebApp.pdb
 C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\netcoreapp5.0\WebApp.genruntimeconfig.cache
+C:\Users\jan\source\repos\WebshopCLI\WebApp\obj\Debug\netcoreapp5.0\staticwebassets\WebApp.StaticWebAssets.xml

@@ -306,3 +306,6 @@ C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.G
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csproj.CopyComplete
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.genruntimeconfig.cache
 C:\Users\jan\source\repos\WebshopCLI\UnitTest\obj\Debug\netcoreapp3.1\UnitTest.csproj.AssemblyReference.cache
+C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\jan\source\repos\WebshopCLI\UnitTest\bin\Debug\netcoreapp3.1\WebDriver.dll
